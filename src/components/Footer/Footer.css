@@ -1,0 +1,57 @@
+.footerContainer {
+  margin: 10px;
+}
+
+.footerTitle {
+  padding: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.footerText {
+  padding: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.contactList {
+  display: flex;
+  padding: 10px;
+}
+
+.item{
+    width: calc(100%/4);
+    padding: 10px;
+}
+
+.titleItem{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.textItem{
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.listSite{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+}
+
+.link>span{
+    display: none;
+}
+
+.copyright{
+padding: 15px 25px;
+border-top: 1px solid black;
+
+font-weight: 700;
+font-size: 13px;
+line-height: 1.2;
+}

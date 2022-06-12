@@ -1,0 +1,126 @@
+/* Шапка */
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.Logotype {
+  display: flex;
+  align-items: center;
+}
+
+.Logotype>img{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+/* .Logotype > img {
+  width: 50px;
+  height: auto;
+  padding: 5px ;
+} */
+
+.Logotype > span {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.17;
+  letter-spacing: -1.5px;
+
+  color: black;
+}
+
+.NavigationLink {
+  padding: 5px 2px;
+
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.17;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: black;
+  border-bottom: 5px solid #4ba87d;
+  padding-bottom: 5px;
+
+  transition: all 0.5s 0.1s ease;
+}
+
+.NavigationLink:not(:last-child) {
+  margin-right: 12px;
+}
+
+.NavigationLink:hover,
+.NavigationLink:active {
+  background: #4ba87d;
+  color: #ffffff;
+  border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+  .Header{
+    height: 50px;
+  }
+
+  .Logotype > img{
+    width: 40px;
+    height: auto;
+  }
+  .Logotype > span {
+    font-size: 18px;
+  }
+
+  .NavigationLink{
+    font-size: 11px;
+  }
+}
+
+.MobMenuIcon {
+    display: none;
+}
+
+
+
+
+/* Головний контейнер*/
+.mainContainer {
+  max-width: 100vw;
+  max-height: max-content;
+  margin: 10px 15px;
+  /* background-color: aquamarine; */
+}
+
+@media screen and (max-width: 480px) {
+  .MobMenuIcon{
+    display: block;
+  }
+
+  .Navigation{
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 50%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+    z-index: 1001;
+  }
+
+  .NavigationLink{
+    padding: 10px 0px;
+  }
+  
+  .mainContainer{
+    margin: 5px 5px;
+  }
+}
+
+
+
