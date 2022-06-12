@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpaleodashboard=self.webpackChunkpaleodashboard||[]).push([[129],{2129:function(a,e,n){n.r(e);var u=n(184);e.default=function(){return(0,u.jsx)("div",{children:"NotFound"})}}}]);
+//# sourceMappingURL=129.196119a8.chunk.js.map

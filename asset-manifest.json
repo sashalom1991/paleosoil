@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/paleosoil/static/css/main.839e3b48.css",
+    "main.js": "/paleosoil/static/js/main.c664e0d7.js",
+    "static/css/176.8175bf0b.chunk.css": "/paleosoil/static/css/176.8175bf0b.chunk.css",
+    "static/js/176.6b5c9338.chunk.js": "/paleosoil/static/js/176.6b5c9338.chunk.js",
+    "static/css/881.58ba791c.chunk.css": "/paleosoil/static/css/881.58ba791c.chunk.css",
+    "static/js/881.17111dcb.chunk.js": "/paleosoil/static/js/881.17111dcb.chunk.js",
+    "static/css/747.acc41907.chunk.css": "/paleosoil/static/css/747.acc41907.chunk.css",
+    "static/js/747.d4f88b0f.chunk.js": "/paleosoil/static/js/747.d4f88b0f.chunk.js",
+    "static/js/129.196119a8.chunk.js": "/paleosoil/static/js/129.196119a8.chunk.js",
+    "static/js/414.6bfb8fcd.chunk.js": "/paleosoil/static/js/414.6bfb8fcd.chunk.js",
+    "static/js/142.cb1c549f.chunk.js": "/paleosoil/static/js/142.cb1c549f.chunk.js",
+    "static/js/224.74391d86.chunk.js": "/paleosoil/static/js/224.74391d86.chunk.js",
+    "static/media/description_map.png": "/paleosoil/static/media/description_map.d7850026073f953222f6.png",
+    "static/media/SB.png": "/paleosoil/static/media/SB.006a90eb53fdf9f88f04.png",
+    "static/media/BO.png": "/paleosoil/static/media/BO.4bf72d9fae847058b88e.png",
+    "static/media/SA.png": "/paleosoil/static/media/SA.97f70ce8b210fbd83f09.png",
+    "static/media/PB.png": "/paleosoil/static/media/PB.1f9292b00153a7ee1b91.png",
+    "static/media/AL.png": "/paleosoil/static/media/AL.e093cc93c8cd9d3796f2.png",
+    "static/media/BL.png": "/paleosoil/static/media/BL.9e95dcb503f7803729d3.png",
+    "static/media/AT.png": "/paleosoil/static/media/AT.7ee26e5f3a43f0000e4e.png",
+    "static/media/default.png": "/paleosoil/static/media/default.91b0304d0dc8905865df.png",
+    "static/media/logo_Igu.png": "/paleosoil/static/media/logo_Igu.935733930d6abcddc2e4.png",
+    "index.html": "/paleosoil/index.html",
+    "main.839e3b48.css.map": "/paleosoil/static/css/main.839e3b48.css.map",
+    "main.c664e0d7.js.map": "/paleosoil/static/js/main.c664e0d7.js.map",
+    "176.8175bf0b.chunk.css.map": "/paleosoil/static/css/176.8175bf0b.chunk.css.map",
+    "176.6b5c9338.chunk.js.map": "/paleosoil/static/js/176.6b5c9338.chunk.js.map",
+    "881.58ba791c.chunk.css.map": "/paleosoil/static/css/881.58ba791c.chunk.css.map",
+    "881.17111dcb.chunk.js.map": "/paleosoil/static/js/881.17111dcb.chunk.js.map",
+    "747.acc41907.chunk.css.map": "/paleosoil/static/css/747.acc41907.chunk.css.map",
+    "747.d4f88b0f.chunk.js.map": "/paleosoil/static/js/747.d4f88b0f.chunk.js.map",
+    "129.196119a8.chunk.js.map": "/paleosoil/static/js/129.196119a8.chunk.js.map",
+    "414.6bfb8fcd.chunk.js.map": "/paleosoil/static/js/414.6bfb8fcd.chunk.js.map",
+    "142.cb1c549f.chunk.js.map": "/paleosoil/static/js/142.cb1c549f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.839e3b48.css",
+    "static/js/main.c664e0d7.js"
+  ]
+}
