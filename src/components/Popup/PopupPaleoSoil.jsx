@@ -22,9 +22,9 @@ const PopupPaleoSoil = ({ props }) => {
         <p><b>Потужність (м.):</b> {props.Soil2_powe}</p>
         <p><b>Хроноітервал голоцену:</b> {props.Holocene_i}</p>
         <p><b>Археологічне датування/ датування:</b> {props.Archeo_dat}</p>
-        <p><b>Фото:</b> <a href='{props.Foto}' target='_blank' rel="noopener noreferrer">{props.Foto}</a></p>
+        <p><b>Фото:</b> <a href={props.Foto} target='_blank' rel="noopener noreferrer">{props.Foto}</a></p>
         <p><b>Література:</b> {props.Literature}</p>
-        <p><b>Документ PDF:</b><a href='{props.PDF}' target='_blank'>{props.PDF}</a></p>
+        <p><b>Документ PDF:</b><a href={props.PDF} target='_blank'  rel="noopener noreferrer">{props.PDF}</a></p>
     </div>
   );
 };

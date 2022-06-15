@@ -2,13 +2,12 @@ import {
   MapContainer,
   TileLayer,
   LayersControl,
-  FeatureGroup,
-  GeoJSON
+  FeatureGroup
 } from 'react-leaflet';
 import data from '../../Data/paleosoil.json';
 import natural_area from '../../Data/natural_area.json';
 import soil from '../../Data/soil.json';
-import landscape from '../../Data/landscape.json'
+// import landscape from '../../Data/landscape.json'
 import Paleosoil from '../Paleosoil/PaleoSoil';
 import NaturalArea from '../NatureArea/NatureArea';
 // import Landscape from '../Landspace/Landscape';
@@ -29,19 +28,6 @@ function MapPaleo() {
         <LayersControl.Overlay checked name="Natural Area">
           <NaturalArea data={natural_area}/>
         </LayersControl.Overlay>
-        {/* <LayersControl.Overlay checked name="Landscape">
-          <GeoJSON data={landscape} style={{
-      opacity: 1,
-      color: 'rgba(0,0,0,0.1)',
-      lineCap: 'butt',
-      lineJoin: 'miter',
-      weight: 1.0,
-      fill: true,
-      fillOpacity: 0.7,
-      fillColor: '#fff',
-      interactive: true,
-    }}></GeoJSON>
-        </LayersControl.Overlay> */}
         <LayersControl.Overlay name="Soil">
           <Soil data={soil}/>
         </LayersControl.Overlay>
