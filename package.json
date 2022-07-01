@@ -1,8 +1,7 @@
 {
-  "name": "paleodashboard",
+  "name": "paleosoil",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sashalom1991.github.io/paleosoil",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",

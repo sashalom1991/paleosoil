@@ -24,7 +24,7 @@ export default function Footer() {
           <h3 className="footerTitle titleItem">Email</h3>
           <p className="textItem">
             <a href="mailto:palaeogeography.ua@gmail.com" >
-              pg.ua@gmail.com
+            palaeogeography.ua@gmail.com
             </a>
           </p>
         </li>

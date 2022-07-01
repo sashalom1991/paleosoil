@@ -1,6 +1,7 @@
 import { GeoJSON} from 'react-leaflet';
 
 function Soil({ data }) {
+  console.log(data)
 
   const mapPolygonColorSoil = id => {
     return id === 1
@@ -107,12 +108,12 @@ function Soil({ data }) {
 
       layer.bindPopup(`<table>
       <tr>
-        <td><b>Ґрунт</b></td>
-        <td>${Name}</td>
+        <td className="SoilPopup"><b>Ґрунт</b></td>
+        <td className="SoilPopup">${Name}</td>
       </tr>
       <tr>
-        <td><b>Клас</b></td>
-        <td>${Class}</td>
+        <td className="SoilPopup"><b>Клас</b></td>
+        <td className="SoilPopup">${Class}</td>
       </tr>
     </table>`)
   }
