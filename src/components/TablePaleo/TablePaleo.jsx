@@ -99,19 +99,6 @@ const columns = [
   { id: "district", label: "Район", minWidth: 100, align: "left" },
   { id: "region", label: "Область", minWidth: 100, align: "left" },
   { id: "size", label: "Природна зона", minWidth: 100, align: "left" },
-  // { id: "density", label: "Край/провінція", minWidth: 100, align: "left" },
-  // {
-  //   id: "density",
-  //   label: "Приуроченість(природна/історична)",
-  //   minWidth: 100,
-  //   align: "left",
-  // },
-  // {
-  //   id: "density",
-  //   label: `Обє'кт (природний/історичний)`,
-  //   minWidth: 100,
-  //   align: "left",
-  // },
   { id: "reshearch", label: "Дослідник", minWidth: 100, align: "left" },
   { id: "year", label: "Рік вивчення", minWidth: 100, align: "left" },
 ];
@@ -126,6 +113,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+let Body = document.querySelector('body')
+
 export default function TablePaleo() {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
@@ -135,6 +124,12 @@ export default function TablePaleo() {
 
   const toggleModal = () => {
     setShowModal(!showModal);
+    console.log(showModal)
+    if(showModal ==='false'){
+      Body.style.overflowY = 'auto';
+    }else{
+      Body.style.overflowY = 'hidden';
+    }
   };
 
   const onClickItem = (e) => {

@@ -1,7 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import "./App.css";
 import Layout from "./Layout/Layout";
+import { Bars } from "react-loader-spinner";
+
+import "./App.css";
 const HomeView = lazy(() => import("../views/HomeView"));
 const TableView = lazy(() => import("../views/TableView"));
 const MapView = lazy(() => import("../views/MapView"));
@@ -12,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Suspense>
-          <Routes fallback={<div>Завантаження...</div>}>
+          <Routes fallback={<Bars color="#00BFFF" height={80} width={80} />}>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomeView />} />
               <Route path="/table" element={<TableView />} />
