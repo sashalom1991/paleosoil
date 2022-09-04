@@ -85,3 +85,28 @@ html {
     padding: 0 10px;
   }
 }
+
+label {
+  margin: 10px 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input.input-error,
+select.input-error {
+  border-color: #fc8181;
+}
+
+.error {
+  color: #fc8181;
+}

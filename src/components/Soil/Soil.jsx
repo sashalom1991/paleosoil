@@ -1,7 +1,6 @@
 import { GeoJSON} from 'react-leaflet';
 
 function Soil({ data }) {
-  console.log(data)
 
   const mapPolygonColorSoil = id => {
     return id === 1

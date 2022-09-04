@@ -1,35 +1,46 @@
+import { useEffect } from 'react';
 import {
   MapContainer,
   TileLayer,
   LayersControl,
-  FeatureGroup
+  FeatureGroup,
 } from 'react-leaflet';
-import data from '../../Data/paleosoil.json';
-import natural_area from '../../Data/natural_area.json';
-import soil from '../../Data/soil.json';
-// import landscape from '../../Data/landscape.json'
 import Paleosoil from '../Paleosoil/PaleoSoil';
 import NaturalArea from '../NatureArea/NatureArea';
 // import Landscape from '../Landspace/Landscape';
 import Soil from '../Soil/Soil';
 
+import natural_area from '../../data/natural_area.json';
+import soil from '../../data/soil.json';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getAllPaleosoilPoint,
+  fetchPaleosoilPoint,
+} from '../../redux/paleosoil';
+// import landscape from '../../data/landscape.json'
+
 import './MapPaleo.css';
 
 function MapPaleo() {
-
+  const data = useSelector(getAllPaleosoilPoint);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPaleosoilPoint());
+  }, [dispatch]);
+  // console.log(data);
   return (
-      <MapContainer center={[49.0377, 31.3193]} zoom={6} scrollWheelZoom={true}>
+    <MapContainer center={[49.0377, 31.3193]} zoom={6} scrollWheelZoom={true}>
       <LayersControl position="topright">
         <LayersControl.Overlay checked name="Paleosoil">
           <FeatureGroup>
-            <Paleosoil data={data.features}/>
+            <Paleosoil points={data} />
           </FeatureGroup>
         </LayersControl.Overlay>
         <LayersControl.Overlay checked name="Natural Area">
-          <NaturalArea data={natural_area}/>
+          <NaturalArea data={natural_area} />
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Soil">
-          <Soil data={soil}/>
+          <Soil data={soil} />
         </LayersControl.Overlay>
         <LayersControl.BaseLayer checked name="OpenStreetMap">
           <TileLayer
