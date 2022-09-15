@@ -13,6 +13,8 @@ import authOperations from '../../redux/auth/authOperations';
 import { authSelectors } from '../../redux/auth';
 import { useDispatch } from 'react-redux';
 
+import { useTranslation } from 'react-i18next';
+
 import './Layout.css';
 
 export default function Layout() {
@@ -20,6 +22,7 @@ export default function Layout() {
   const [burMenu, setBurMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const { t, i18n } = useTranslation();
 
   const mobileMenu = () => setBurMenu(!burMenu);
 
@@ -40,33 +43,37 @@ export default function Layout() {
     console.log('OK');
   };
 
+  const handelChangeLng = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <>
       <header className="Header">
         <NavLink to="/" className="Logotype">
           <img src={Logo} alt="Logo" />
-          <span>Golocen Soil</span>
+          <span>Holocen Soil</span>
         </NavLink>
 
         <nav>
           {(burMenu || screenWidth > 480) && (
             <div className="Navigation" id="navigation">
               <NavLink className="NavigationLink" to="/" onClick={mobileMenu}>
-                Головна
+                {t('layout.main')}
               </NavLink>
               <NavLink
                 className="NavigationLink"
                 to="/table"
                 onClick={mobileMenu}
               >
-                Таблиця
+                {t('layout.table')}
               </NavLink>
               <NavLink
                 className="NavigationLink"
                 to="/map"
                 onClick={mobileMenu}
               >
-                Карта
+                {t('layout.map')}
               </NavLink>
               <NavLink
                 className="NavigationLink"
@@ -96,7 +103,8 @@ export default function Layout() {
             </div>
           )}
         </nav>
-
+        <button onClick={() => handelChangeLng('ua')}>UA</button>
+        <button onClick={() => handelChangeLng('en')}>EN</button>
         <div className="MobMenuIcon">
           {!burMenu ? (
             <FaBars className="Menu" onClick={mobileMenu} />

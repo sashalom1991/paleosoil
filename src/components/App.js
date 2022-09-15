@@ -21,6 +21,7 @@ function App() {
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
   // useEffect(() => dispatch(authOperations.fetchCurrentUser()), [dispatch]);
+
   return (
     <div className="App">
       {!isFetchingCurrentUser ? (
