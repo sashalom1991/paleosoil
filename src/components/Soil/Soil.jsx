@@ -1,7 +1,7 @@
-import { GeoJSON} from 'react-leaflet';
+import { GeoJSON } from 'react-leaflet';
+import { t } from 'i18next';
 
 function Soil({ data }) {
-
   const mapPolygonColorSoil = id => {
     return id === 1
       ? 'rgba(234,231,175,1.0)'
@@ -103,23 +103,27 @@ function Soil({ data }) {
   };
 
   const onEachFeature = (e, layer) => {
-      let {Name, Class} = e.properties;
+    let { Name, Class } = e.properties;
 
-      layer.bindPopup(`<table>
+    layer.bindPopup(`<table>
       <tr>
-        <td className="SoilPopup"><b>Ґрунт</b></td>
+        <td className="SoilPopup"><b>${t('soil.nameSoil')}</b></td>
         <td className="SoilPopup">${Name}</td>
       </tr>
       <tr>
-        <td className="SoilPopup"><b>Клас</b></td>
+        <td className="SoilPopup"><b>${t('soil.classSoil')}</b></td>
         <td className="SoilPopup">${Class}</td>
       </tr>
-    </table>`)
-  }
+    </table>`);
+  };
 
   return (
-    <GeoJSON data={data} style={stylingSoil} id={data.features.Id} onEachFeature={onEachFeature}>
-    </GeoJSON>
+    <GeoJSON
+      data={data}
+      style={stylingSoil}
+      id={data.features.Id}
+      onEachFeature={onEachFeature}
+    ></GeoJSON>
   );
 }
 

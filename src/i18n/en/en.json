@@ -1,12 +1,71 @@
 {
-        "layout": {
-          "main": "Main",
-          "table": "Table",
-          "map": "Map"
-        },
-        "desc": {
-          "title": "Paleo-soil studies of the nature of the Holocene within the plain territory of Ukraine",
-          "text1": "The collected results for the database are obtained from published scientific materials. The current version of the database is placed on the resource ",
-          "text2": "The research was carried out under the competitive project No. Ф82\/160-2019 within the framework of the grant of the President of Ukraine \"Storage and spatial binding of paleo-soil research data to the assessment within the flat part of Ukraine on the basis of GIS technologies\" and the National Academy of Sciences of Ukraine for young scientists in 2021-2022. \"Development of a web-based GIS application for data management of Holocene paleo-soil research in the context of adaptation to climate change\"."
-        }
+  "layout": {
+    "main": "Main",
+    "table": "Table",
+    "map": "Map"
+  },
+  "desc": {
+    "title": "Paleo-soil studies of the nature of the Holocene within the plain territory of Ukraine",
+    "text1": "The collected results for the database are obtained from published scientific materials. The current version of the database is placed on the resource ",
+    "text2": "The research was carried out under the competitive project No. Ф82/160-2019 within the framework of the grant of the President of Ukraine \"Storage and spatial binding of paleo-soil research data to the assessment within the flat part of Ukraine on the basis of GIS technologies\" and the National Academy of Sciences of Ukraine for young scientists in 2021-2022. \"Development of a web-based GIS application for data management of Holocene paleo-soil research in the context of adaptation to climate change\"."
+  },
+  "descGuest": {
+    "title": "Повідомити про виявлене дослідження",
+    "text": "Якщо Ви хочете доповнити дану базу палеоґрунтознавчих досліджень своїми дослідженнями або знахідками, це можна зробити наступними шляхами. Про знахідку можна повідомити за допомогою листа на нашу скриньку або ж заповнивши Google Form дослідження. Через певний час, після розгялду заявки, Ваша знахідка буде додана у БД палеоґрунтознавчих досліджень."
+  },
+  "footer": {
+    "title": "Наші контакти",
+    "text": "Для зв'язку із дослідниками, щодо пропозицій або розвитку даної системи можна звернутись за наступними контактами",
+    "address": "Адреса",
+    "addressName1": "вул. Володимирська, 44",
+    "addressName2": "м. Київ, 01030",
+    "addressName3": "Інститут географії НАН України",
+    "phone": "Телефон",
+    "avtorName1": "Кушнір Анатолій",
+    "avtorName2": "Лейберюк Олександр",
+    "avtorName3": "Швайко Володимир",
+    "webPage": "Інтернет сторінки",
+    "site": "Сайт",
+    "copyringht1": "Використання матерiалiв сайту дозволяється за умови посилання на",
+    "copyringht2": "Всі права захищені."
+  },
+  "mapPaleo": {
+    "paleosoil": "Палеоґрунтознавчі об'єкти",
+    "naturalArea": "Природні зони",
+    "soil": "Ґрунти"
+  },
+  "landscape": {
+    "soil": "Ґрунт:",
+    "class": "Клас:"
+  },
+  "naturalArea": {
+    "zone": "Зона:"
+  },
+  "infoPaleo": {
+    "settl": "Поселення:",
+    "district": "Район:",
+    "region": "Область:",
+    "lat": "Широта:",
+    "long": "Довгота:",
+    "natZones": "Природна зона:",
+    "physLand": "Край/провінція:",
+    "locality": "Приуроченість(природна/історична):",
+    "object": "Обє'кт (природний/історичний):",
+    "researcher": "Дослідник:",
+    "year": "Рік вивчення:",
+    "researMethod": "Використані методи дослідження:",
+    "modernSoil": "Сучасний тип ґрунту:",
+    "soilProM": "Потужність розірзу (м.):",
+    "burSoil": "Похований ґрунт:",
+    "paleosoilM": "Потужність (м.):",
+    "pHoloc": "Хроноітервал голоцену:",
+    "archDat": "Археологічне датування/ датування:",
+    "references": "Література:",
+    "pdf": "Документ PDF:",
+    "foto": "Фото"
+  },
+  "soil": {
+    "nameSoil": "Ґрунт",
+    "classSoil": "Клас"
+  }
 }

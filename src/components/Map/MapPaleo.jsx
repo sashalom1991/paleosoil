@@ -5,6 +5,7 @@ import {
   LayersControl,
   FeatureGroup,
 } from 'react-leaflet';
+import { t } from 'i18next';
 import Paleosoil from '../Paleosoil/PaleoSoil';
 import NaturalArea from '../NatureArea/NatureArea';
 // import Landscape from '../Landspace/Landscape';
@@ -31,15 +32,15 @@ function MapPaleo() {
   return (
     <MapContainer center={[49.0377, 31.3193]} zoom={6} scrollWheelZoom={true}>
       <LayersControl position="topright">
-        <LayersControl.Overlay checked name="Paleosoil">
+        <LayersControl.Overlay checked name={t('mapPaleo.paleosoil')}>
           <FeatureGroup>
             <Paleosoil points={data} />
           </FeatureGroup>
         </LayersControl.Overlay>
-        <LayersControl.Overlay checked name="Natural Area">
+        <LayersControl.Overlay checked name={t('mapPaleo.naturalArea')}>
           <NaturalArea data={natural_area} />
         </LayersControl.Overlay>
-        <LayersControl.Overlay name="Soil">
+        <LayersControl.Overlay name={t('mapPaleo.soil')}>
           <Soil data={soil} />
         </LayersControl.Overlay>
         <LayersControl.BaseLayer checked name="OpenStreetMap">

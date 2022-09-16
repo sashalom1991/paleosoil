@@ -265,7 +265,7 @@ export default function TablePaleo() {
                       color="success"
                       onClick={() => onClickItem(rowData)}
                     >
-                      Інфо
+                      Іnfo
                     </Button>
                     <IconButton
                       aria-label="delete"

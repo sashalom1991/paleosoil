@@ -1,4 +1,6 @@
 import { GeoJSON } from 'react-leaflet';
+import { t } from 'i18next';
+
 function NaturalArea({ data }) {
   const mapPolygonColorNaturalArea = area => {
     return area === 'зона мішаних лісів'
@@ -35,7 +37,7 @@ function NaturalArea({ data }) {
 
     layer.bindPopup(`<table>
         <tr>
-          <td><b>Зона</b></td>
+          <td><b>${t('naturalArea.zone')}</b></td>
           <td>${name}</td>
         </tr>
       </table>`);

@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Bars } from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './TablePaleoModal.css';
+import { t } from 'i18next';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -63,64 +64,64 @@ export default function Modal({ onClose, info }) {
 
         <ul className="List_modal">
           <li>
-            <b>Поселення:</b> {info.settlement}
+            <b>{t('infoPaleo.settl')}</b> {info.settlement}
           </li>
           <li>
-            <b>Район:</b> {info.district}
+            <b>{t('infoPaleo.district')}</b> {info.district}
           </li>
           <li>
-            <b>Область:</b> {info.region}
+            <b>{t('infoPaleo.region')}</b> {info.region}
           </li>
           <li>
-            <b>Широта:</b> {info.y}
+            <b>{t('infoPaleo.lat')}</b> {info.y}
           </li>
           <li>
-            <b>Довгота:</b> {info.x}
+            <b>{t('infoPaleo.long')}</b> {info.x}
           </li>
           <li>
-            <b>Природна зона:</b> {info.natural_zones}
+            <b>{t('infoPaleo.natZones')}</b> {info.natural_zones}
           </li>
           <li>
-            <b>Край/провінція:</b> {info.physiographical_l}
+            <b>{t('infoPaleo.physLand')}</b> {info.physiographical_l}
           </li>
           <li>
-            <b>Приуроченість(природна/історична):</b> {info.locality}
+            <b>{t('infoPaleo.locality')}</b> {info.locality}
           </li>
           <li>
-            <b>Обє'кт (природний/історичний):</b> {info.object}
+            <b>{t('infoPaleo.object')}</b> {info.object}
           </li>
           <li>
-            <b>Дослідник:</b> {info.researcher}
+            <b>{t('infoPaleo.researcher')}</b> {info.researcher}
           </li>
           <li>
-            <b>Рік вивчення:</b> {info.year}
+            <b>{t('infoPaleo.year')}</b> {info.year}
           </li>
           <li>
-            <b>Використані методи дослідження:</b> {info.research_methods}
+            <b>{t('infoPaleo.researMethod')}</b> {info.research_methods}
           </li>
           <li>
-            <b>Сучасний тип ґрунту:</b> {info.modern_soil}
+            <b>{t('infoPaleo.modernSoil')}</b> {info.modern_soil}
           </li>
           <li>
-            <b>Потужність розірзу (м.):</b> {info.soil_m}
+            <b>{t('infoPaleo.soilProM')}</b> {info.soil_m}
           </li>
           <li>
-            <b>Похований ґрунт:</b> {info.buried_soil}
+            <b>{t('infoPaleo.burSoil')}</b> {info.buried_soil}
           </li>
           <li>
-            <b>Потужність (м.):</b> {info.paleosoil_m}
+            <b>{t('infoPaleo.paleosoilM')}</b> {info.paleosoil_m}
           </li>
           <li>
-            <b>Хроноітервал голоцену:</b> {info.period_holocene}
+            <b>{t('infoPaleo.pHoloc')}</b> {info.period_holocene}
           </li>
           <li>
-            <b>Археологічне датування/ датування:</b> {info.arch_dating}
+            <b>{t('infoPaleo.archDat')}</b> {info.arch_dating}
           </li>
           <li>
-            <b>Література:</b> {info.references}
+            <b>{t('infoPaleo.references')}</b> {info.references}
           </li>
           <li>
-            <b>Документ PDF:</b>
+            <b>{t('infoPaleo.pdf')}</b>
             <a href={info.pdf} target="_blank" rel="noopener noreferrer">
               {info.pdf}
             </a>

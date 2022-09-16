@@ -3,7 +3,7 @@ import MapPaleoSoil from '../../assets/img/description_map.png';
 import { useTranslation } from 'react-i18next';
 
 function Description() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       <div className="DescContainer">
@@ -29,17 +29,8 @@ function Description() {
         </div>
 
         <div className="DescGuest">
-          <h2 className="DescGusetTitle">
-            Повідомити про виявлене дослідження
-          </h2>
-          <p className="DescGuestText">
-            Якщо Ви хочете доповнити дану базу палеоґрунтознавчих досліджень
-            своїми дослідженнями або знахідками, це можна зробити наступними
-            шляхами. Про знахідку можна повідомити за допомогою листа на нашу
-            скриньку або ж заповнивши Google Form дослідження. Через певний час,
-            після розгялду заявки, Ваша знахідка буде додана у БД
-            палеоґрунтознавчих досліджень.
-          </p>
+          <h2 className="DescGusetTitle">{t('descGuest.title')}</h2>
+          <p className="DescGuestText">{t('descGuest.text')}</p>
           <span className="DescGuestLink">
             <a href="mailto:palaeogeography.ua@gmail.com">
               palaeogeography.ua@gmail.com
