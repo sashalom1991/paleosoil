@@ -40,7 +40,7 @@ function Paleosoil({ points }) {
         return (
           <Marker
             position={[longitude, latitude]}
-            key={point.id}
+            key={point._id}
             icon={IconType(point.period_holocene)}
           >
             <Popup>

@@ -12,9 +12,10 @@ import { useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/authOperations';
 import { authSelectors } from '../../redux/auth';
 import { useDispatch } from 'react-redux';
-
 import { useTranslation } from 'react-i18next';
 
+import FlagUa from '../../assets/Icon/Flag_UA.svg';
+import FlagEn from '../../assets/Icon/Flag_UK.svg';
 import './Layout.css';
 
 export default function Layout() {
@@ -103,8 +104,14 @@ export default function Layout() {
             </div>
           )}
         </nav>
-        <button onClick={() => handelChangeLng('ua')}>UA</button>
-        <button onClick={() => handelChangeLng('en')}>EN</button>
+        <div>
+          <button onClick={() => handelChangeLng('ua')}>
+            <img src={FlagUa} alt="flag of Ukraine" className="Flag" />
+          </button>
+          <button onClick={() => handelChangeLng('en')}>
+            <img src={FlagEn} alt="flag of the UK" className="Flag" />
+          </button>
+        </div>
         <div className="MobMenuIcon">
           {!burMenu ? (
             <FaBars className="Menu" onClick={mobileMenu} />

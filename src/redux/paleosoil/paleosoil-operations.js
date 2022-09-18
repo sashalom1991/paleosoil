@@ -5,6 +5,7 @@ import {
   addPaleosoilPointSuccess,
 } from './paleosoil-action';
 import axios from 'axios';
+import cogoToast from 'cogo-toast';
 
 axios.defaults.baseURL = 'https://paleosoil-backend.herokuapp.com/api/';
 
@@ -39,8 +40,10 @@ const addPaleosoilPoint = operation => async dispatch => {
   try {
     const { data } = await axios.post('/paleosoil/ua/add', operation);
     dispatch(addPaleosoilPointSuccess(data));
+    cogoToast.success('Success!');
   } catch (error) {
     dispatch(addPaleosoilPointError(error.message));
+    cogoToast.error(error.message);
   }
 };
 

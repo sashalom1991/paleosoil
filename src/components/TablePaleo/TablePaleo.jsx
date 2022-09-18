@@ -29,6 +29,7 @@ import {
   deletePaleosoilPoint,
   getLoading,
 } from '../../redux/paleosoil';
+// import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { makeStyles } from '@mui/styles';
 
@@ -103,7 +104,7 @@ TablePaginationActions.propTypes = {
 
 const columns = [
   { id: 'id', label: '№', minWidth: 70, align: 'left' },
-  { id: 'settlement', label: 'Населений пункт', minWidth: 100, align: 'left' },
+  { id: 'settlement', label: 'Поселення', minWidth: 100, align: 'left' },
   { id: 'district', label: 'Район', minWidth: 100, align: 'left' },
   { id: 'region', label: 'Область', minWidth: 100, align: 'left' },
   { id: 'natural_zones', label: 'Природна зона', minWidth: 100, align: 'left' },

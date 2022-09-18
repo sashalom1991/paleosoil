@@ -1,12 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import { alert, defaults } from '@pnotify/core';
-
-// defaults.styling = 'material';
-// defaults.icons = 'material';
-// defaults.delay = 1000;
+import cogoToast from 'cogo-toast';
 
 axios.defaults.baseURL = 'https://paleosoil-backend.herokuapp.com/api/';
 
@@ -24,10 +18,11 @@ const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/auth/register', credentials);
-
+      cogoToast.success('Success!');
       token.set(data.data.token);
       return data.data;
     } catch (error) {
+      cogoToast.error(error.message);
       return rejectWithValue(error);
     }
   },
@@ -39,9 +34,17 @@ const login = createAsyncThunk(
     try {
       const { data } = await axios.post('/auth/login', credentials);
       token.set(data.token);
+      cogoToast.success(`Hi! You are signed in with ${data.user.email}`, {
+        position: 'top-right',
+        hideAfter: 4,
+      });
       return data;
     } catch (error) {
-      alert('Not Authorized. Wrong email, password or not have a acount!!!');
+      cogoToast.error(
+        `Sorry, but your email address or password is incorrect. Try again or ask for help!!!`,
+        { position: 'top-right', hideAfter: 4 },
+      );
+
       return rejectWithValue(error);
     }
   },
@@ -51,8 +54,12 @@ const logout = createAsyncThunk('/auth/logout', async () => {
   try {
     await axios.get('/auth/logout');
     token.unset();
-    alert('Goodbye!');
+    cogoToast.success(`Goodbye! Come again with new cuts!`, {
+      position: 'top-right',
+      hideAfter: 4,
+    });
   } catch (error) {
+    cogoToast.error(error, { position: 'top-right' });
     console.log(error);
   }
 });

@@ -28,7 +28,8 @@ function MapPaleo() {
   useEffect(() => {
     dispatch(fetchPaleosoilPoint());
   }, [dispatch]);
-  // console.log(data);
+  console.log(data);
+
   return (
     <MapContainer center={[49.0377, 31.3193]} zoom={6} scrollWheelZoom={true}>
       <LayersControl position="topright">

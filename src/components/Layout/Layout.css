@@ -123,5 +123,17 @@
   }
 }
 
+.Flag{
+  padding: 5px;
+  height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .Flag{
+    height: 25px;
+    padding: 5px 10px;
+  }
+}
+
 
 

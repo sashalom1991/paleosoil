@@ -1,18 +1,18 @@
 import { Form, Formik } from 'formik';
 import { Button } from '@mui/material';
-import addUkrSchema from '../../schemas/addUkrSchema';
+import addEngSchema from '../../schemas/addEngSchema';
 
 import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { addPaleosoilPoint, getAllPaleosoilPoint } from '../../redux/paleosoil';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { addPaleosoilPoint, getAllPaleosoilPoint } from '../../redux/paleosoil';
 
-const FormObjectAddUkr = () => {
-  const data = useSelector(getAllPaleosoilPoint);
-  const dispatch = useDispatch();
+const FormObjectAddEng = () => {
+  //   const data = useSelector(getAllPaleosoilPoint);
+  //   const dispatch = useDispatch();
 
-  console.dir(data);
+  //   console.dir(data);
 
   return (
     <Formik
@@ -41,10 +41,11 @@ const FormObjectAddUkr = () => {
         foto: '',
         small_foto: '',
       }}
-      validationSchema={addUkrSchema}
+      validationSchema={addEngSchema}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          dispatch(addPaleosoilPoint(values));
+          alert(values);
+          //   dispatch(addPaleosoilPoint(values));
           actions.setSubmitting(false);
         }, 1000);
       }}
@@ -57,41 +58,34 @@ const FormObjectAddUkr = () => {
             type="string"
             placeholder="Settlement near the research object. Example: Storozhove"
           />
-          <CustomInput
-            label="District"
-            name="district"
-            type="string"
-            placeholder="District the research object. Example: Buchanskyi"
-          />
           <CustomSelect label="Region" name="region" placeholder="">
             <option value="">- - - - </option>
-            <option value="АР Крим">АР Крим</option>
-            <option value="Вінницька">Вінницька</option>
-            <option value="Волинська">Волинська</option>
-            <option value="Дніпропетровська">Дніпропетровська</option>
-            <option value="Донецька">Донецька</option>
-            <option value="Житомирська">Житомирська</option>
-            <option value="Закарпатська">Закарпатська</option>
-            <option value="Запорізька">Запорізька</option>
-            <option value="Івано-Франківська">Івано-Франківська</option>
-            <option value="Київська">Київська</option>
-            <option value="Кіровоградська">Кіровоградська</option>
-            <option value="Луганська">Луганська</option>
-            <option value="Львівська">Львівська</option>
-            <option value="Миколаївська">Миколаївська</option>
-            <option value="Одеська">Одеська</option>
-            <option value="Полтавська">Полтавська</option>
-            <option value="Рівненська">Рівненська</option>
-            <option value="Сумська">Сумська</option>
-            <option value="Тернопільська">Тернопільська</option>
-            <option value="Харківська">Харківська</option>
-            <option value="Херсонська">Херсонська</option>
-            <option value="Хмельницька">Хмельницька</option>
-            <option value="Черкаська">Черкаська</option>
-            <option value="Чернівецька">Чернівецька</option>
-            <option value="Чернігівська">Чернігівська</option>
-            <option value="м. Київ">м. Київ</option>
-            <option value="м. Севастополь">м. Севастополь</option>
+            <option value="Cherkasy">Cherkasy</option>
+            <option value="Chernihiv">Chernihiv</option>
+            <option value="Chernivtsi">Chernivtsi</option>
+            <option value="Dnipro">Dnipro</option>
+            <option value="Donetsk">Donetsk</option>
+            <option value="Ivano-Frankivsk">Ivano-Frankivsk</option>
+            <option value="Kharkiv">Kharkiv</option>
+            <option value="Kherson">Kherson</option>
+            <option value="Khmelnytskyi">Khmelnytskyi</option>
+            <option value="Kyiv">Kyiv</option>
+            <option value="Kirovohrad">Kirovohrad</option>
+            <option value="Luhansk">Luhansk</option>
+            <option value="Lviv">Lviv</option>
+            <option value="Mykolaiv">Mykolaiv</option>
+            <option value="Odesa">Odesa</option>
+            <option value="Poltava">Poltava</option>
+            <option value="Rivne">Rivne</option>
+            <option value="Sumy">Sumy</option>
+            <option value="Ternopil">Ternopil</option>
+            <option value="Vinnytsia">Vinnytsia</option>
+            <option value="Volyn">Volyn</option>
+            <option value="Zakarpattia">Zakarpattia</option>
+            <option value="Zaporizhzhia">Zaporizhzhia</option>
+            <option value="Zhytomyr">Zhytomyr</option>
+            <option value="c. Kyiv">c. Kyiv</option>
+            <option value="c. Sevastopol">c. Sevastopol</option>
           </CustomSelect>
           <CustomInput
             label="Longitude"
@@ -111,18 +105,16 @@ const FormObjectAddUkr = () => {
             placeholder=""
           >
             <option value="">- - - - </option>
-            <option value="Мішані ліси">Зона мішаних лісів</option>
-            <option value="Широколистяні ліси">
-              Зона широколистяних лісів
+            <option value="Mixed (coniferous-and-broad-leaved) woods">
+              Zona of mixed (coniferous-and-broad-leaved) woods
             </option>
-            <option value="Лісостеп">Лісостепова зона</option>
-            <option value="Степ">Степова зона</option>
-            <option value="Карпатська гірська країна">
-              Карпатська гірська країна
+            <option value="Broad-leaved forests">
+              Zona of broad-leaved forests
             </option>
-            <option value="Кавказько-Кримська гірська країна">
-              Кавказько-Кримська гірська країна
-            </option>
+            <option value="Forest-steppe">Forest steppe zone</option>
+            <option value="Steppe">Zone of steppe</option>
+            <option value="Ukraine Carpathians">Ukraine Carpathians</option>
+            <option value="Crimean Mountains">Crimean Mountains</option>
           </CustomSelect>
           <CustomSelect
             label="Physiographical Lands"
@@ -130,37 +122,37 @@ const FormObjectAddUkr = () => {
             placeholder=""
           >
             <option value="">- - - - </option>
-            <option value="Поліський">Поліський край</option>
-            <option value="Західноукраїнський">Західноукраїнський край</option>
-            <option value="Подільсько-Придніпровський">
-              Подільсько-Придніпровський край
+            <option value="Polessye region">Polessye region</option>
+            <option value="West Ukraine region">West Ukraine region</option>
+            <option value="Podolia–Dnipro forest steppe region">
+              Podolia–Dnipro forest steppe region
             </option>
-            <option value="Східноукраїнський">Східноукраїнський край</option>
-            <option value="Лівобережнодніпровський">
-              Лівобережнодніпровський край
+            <option value="Left bank of Dnipro forest steppe region">
+              Left bank of Dnipro forest steppe region
             </option>
-            <option value="Дністровсько-Дніпровський">
-              Дністровсько-Дніпровський край
+            <option value="East Ukraine forest steppe region">
+              East Ukraine forest steppe region
             </option>
-            <option value="Лівобережнодніпровсько-Приазовський">
-              Лівобережнодніпровсько-Приазовський край
+            <option value="Dnister–Dnipro region">Dnister–Dnipro region</option>
+            <option value="Left bank of Dnipro–Sea of Azov coast region">
+              Left bank of Dnipro–Sea of Azov coast region
             </option>
-            <option value="Донецький">Донецький край</option>
-            <option value="Задонецько-Донський">
-              Задонецько-Донський край
+            <option value="Donets region">Donets region</option>
+            <option value="Trans-Donets–Don region">
+              Trans-Donets–Don region
             </option>
-            <option value="Причорноморський середньостеповий">
-              Причорноморський середньостеповий край
+            <option value="Black Sea coast central steppe region">
+              Black Sea coast central steppe region
             </option>
-            <option value="Причорноморсько-Приазовський">
-              Причорноморсько-Приазовський край
+            <option value="Black Sea–Sea of Azov coastal region">
+              Black Sea–Sea of Azov coastal region
             </option>
-            <option value="Кримський степовий">Кримський степовий край</option>
-            <option value="Гірський край - Українські Карпати">
-              Гірський край - Українські Карпати
+            <option value="Crimean steppe region">Crimean steppe region</option>
+            <option value="Carpathians mountain region">
+              Carpathians mountain region
             </option>
-            <option value="Кримський гірський край">
-              Кримський гірський край
+            <option value="Crimean mountain region">
+              Crimean mountain region
             </option>
           </CustomSelect>
           <CustomInput
@@ -268,7 +260,7 @@ const FormObjectAddUkr = () => {
             variant="contained"
             color="success"
           >
-            Відправити
+            Submit
           </Button>
         </Form>
       )}
@@ -276,4 +268,4 @@ const FormObjectAddUkr = () => {
   );
 };
 
-export default FormObjectAddUkr;
+export default FormObjectAddEng;

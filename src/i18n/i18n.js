@@ -16,7 +16,7 @@ i18next
         translation: en,
       },
     },
-    fallbackLng: localStorage.getItem('lng') || 'ua',
+    fallbackLng: localStorage.getItem('i18nextLng') || 'ua',
     debug: true,
   });
 
