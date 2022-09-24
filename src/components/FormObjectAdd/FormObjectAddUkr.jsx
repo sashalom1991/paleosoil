@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Form, Formik } from 'formik';
 import { Button } from '@mui/material';
 import addUkrSchema from '../../schemas/addUkrSchema';
@@ -6,18 +7,27 @@ import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addPaleosoilPoint, getAllPaleosoilPoint } from '../../redux/paleosoil';
+import {
+  addPaleosoilPoint,
+  getAllPaleosoilPoint,
+  fetchPaleosoilPoint,
+} from '../../redux/paleosoil';
 
 const FormObjectAddUkr = () => {
   const data = useSelector(getAllPaleosoilPoint);
   const dispatch = useDispatch();
 
-  console.dir(data);
+  useEffect(() => {
+    dispatch(fetchPaleosoilPoint());
+  }, [dispatch]);
+
+  console.log(data.length);
+  const iD = data.length + 1;
 
   return (
     <Formik
       initialValues={{
-        // id: iD,
+        id: iD,
         settlement: '',
         district: '',
         region: '',
@@ -46,24 +56,25 @@ const FormObjectAddUkr = () => {
         setTimeout(() => {
           dispatch(addPaleosoilPoint(values));
           actions.setSubmitting(false);
+          actions.resetForm();
         }, 1000);
       }}
     >
       {({ isSubmitting }) => (
         <Form>
           <CustomInput
-            label="Settlement"
+            label="Поселення"
             name="settlement"
             type="string"
             placeholder="Settlement near the research object. Example: Storozhove"
           />
           <CustomInput
-            label="District"
+            label="Район"
             name="district"
             type="string"
             placeholder="District the research object. Example: Buchanskyi"
           />
-          <CustomSelect label="Region" name="region" placeholder="">
+          <CustomSelect label="Область" name="region" placeholder="">
             <option value="">- - - - </option>
             <option value="АР Крим">АР Крим</option>
             <option value="Вінницька">Вінницька</option>

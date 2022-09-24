@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 const addUkrSchema = yup.object().shape({
-  // id: yup.number().required(),
+  id: yup.number().required(),
   settlement: yup.string().required(),
   district: yup.string().required(),
   region: yup

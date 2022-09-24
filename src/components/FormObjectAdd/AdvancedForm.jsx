@@ -1,24 +1,112 @@
 import { Form, Formik } from 'formik';
-import { Button } from '@mui/material';
-import addEngSchema from '../../schemas/addEngSchema';
-
+// import { advancedSchema } from '../schemas';
 import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
+import * as yup from 'yup';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { addPaleosoilPoint, getAllPaleosoilPoint } from '../../redux/paleosoil';
+const advancedSchema = yup.object().shape({
+  settlement: yup.string().required(),
+  region: yup
+    .string()
+    .oneOf([
+      'Cherkasy',
+      'Chernihiv',
+      'Chernivtsi',
+      'Dnipro',
+      'Donetsk',
+      'Ivano-Frankivsk',
+      'Kharkiv',
+      'Kherson',
+      'Khmelnytskyi',
+      'Kyiv',
+      'Kirovohrad',
+      'Luhansk',
+      'Lviv',
+      'Mykolaiv',
+      'Odesa',
+      'Poltava',
+      'Rivne',
+      'Sumy',
+      'Ternopil',
+      'Vinnytsia',
+      'Volyn',
+      'Zakarpattia',
+      'Zaporizhzhia',
+      'Zhytomyr',
+      'c. Kyiv',
+      'c. Sevastopol',
+    ])
+    .required(),
+  x: yup.number('').min(4).required(),
+  y: yup.number('').min(4).required(),
+  natural_zones: yup
+    .string()
+    .oneOf([
+      'Mixed (coniferous-and-broad-leaved) woods',
+      'Broad-leaved forests',
+      'Forest-steppe',
+      'Steppe',
+      'Ukraine Carpathians',
+      'Crimean Mountains',
+    ])
+    .required(),
+  physiographical_l: yup
+    .string()
+    .oneOf([
+      'Polessye region',
+      'West Ukraine region',
+      'Podolia–Dnipro forest steppe region',
+      'Left bank of Dnipro forest steppe region',
+      'East Ukraine forest steppe region',
+      'Dnister–Dnipro region',
+      'Left bank of Dnipro–Sea of Azov coast region',
+      'Donets region',
+      'Trans-Donets–Don region',
+      'Black Sea coast central steppe region',
+      'Black Sea–Sea of Azov coastal region',
+      'Crimean steppe region',
+      'Carpathians mountain region',
+      'Crimean mountain region',
+    ])
+    .required(),
+  locality: yup.string().required(),
+  object: yup.string().required(),
+  researcher: yup.string().required(),
+  year: yup.number('').min(4).required(),
+  research_methods: yup.string().required(),
+  modern_soil: yup.string().required(),
+  soil_m: yup.number(''),
+  buried_soil: yup.string().required(),
+  paleosoil_m: yup.number(''),
+  period_holocene: yup
+    .string()
+    .oneOf([
+      'AL - Allerod',
+      'AT - Atlantic',
+      'BL - Bolling',
+      'ВО - Boreal',
+      'PB - Preboreal',
+      'SA - Subatlantic',
+      'SB - Subboreal',
+    ])
+    .required(),
+  arch_dating: yup.string().required(),
+  references: yup.string().required(),
+  pdf: yup.string(),
+  foto: yup.string(),
+  small_foto: yup.string(),
+});
 
-const FormObjectAddEng = () => {
-  const data = useSelector(getAllPaleosoilPoint);
-  const dispatch = useDispatch();
-  const iD = data.length + 1;
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  actions.resetForm();
+};
 
+const AdvancedForm = () => {
   return (
     <Formik
       initialValues={{
-        id: iD,
         settlement: '',
-        district: '',
         region: '',
         x: '',
         y: '',
@@ -40,21 +128,15 @@ const FormObjectAddEng = () => {
         foto: '',
         small_foto: '',
       }}
-      validationSchema={addEngSchema}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          dispatch(addPaleosoilPoint(values));
-          actions.setSubmitting(false);
-        }, 1000);
-      }}
+      validationSchema={advancedSchema}
+      onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
         <Form>
           <CustomInput
-            label="Поселення"
+            label="settlement"
             name="settlement"
-            type="string"
-            placeholder="Settlement near the research object. Example: Storozhove"
+            placeholder="Please select a job"
           />
           <CustomSelect label="Область" name="region" placeholder="">
             <option value="">- - - - </option>
@@ -112,7 +194,7 @@ const FormObjectAddEng = () => {
             <option value="Ukraine Carpathians">Ukraine Carpathians</option>
             <option value="Crimean Mountains">Crimean Mountains</option>
           </CustomSelect>
-          {/* <CustomSelect
+          <CustomSelect
             label="Physiographical Lands"
             name="physiographical_l"
             placeholder=""
@@ -120,53 +202,50 @@ const FormObjectAddEng = () => {
             <option value="">- - - - </option>
             <option value="Polessye region">Polessye region</option>
             <option value="West Ukraine region">West Ukraine region</option>
-            <option value="Подільсько-Придніпровський">
-              Подільсько-Придніпровський край
+            <option value="Podolia–Dnipro forest steppe region">
+              Podolia–Dnipro forest steppe region
             </option>
-            <option value="Східноукраїнський">Східноукраїнський край</option>
-            <option value="Лівобережнодніпровський">
-              Лівобережнодніпровський край
+            <option value="East Ukraine forest steppe region">
+              East Ukraine forest steppe region
             </option>
-            <option value="Дністровсько-Дніпровський">
-              Дністровсько-Дніпровський край
+            <option value="Left bank of Dnipro forest steppe region">
+              Left bank of Dnipro forest steppe region
             </option>
-            <option value="Лівобережнодніпровсько-Приазовський">
-              Лівобережнодніпровсько-Приазовський край
+            <option value="Dnister–Dnipro region">Dnister–Dnipro region</option>
+            <option value="Left bank of Dnipro–Sea of Azov coast region">
+              Left bank of Dnipro–Sea of Azov coast region
             </option>
-            <option value="Донецький">Донецький край</option>
-            <option value="Задонецько-Донський">
-              Задонецько-Донський край
+            <option value="Donets region">Donets region</option>
+            <option value="Trans-Donets–Don region">
+              Trans-Donets–Don region
             </option>
-            <option value="Причорноморський середньостеповий">
-              Причорноморський середньостеповий край
+            <option value="Black Sea coast central steppe region">
+              Black Sea coast central steppe region
             </option>
-            <option value="Причорноморсько-Приазовський">
-              Причорноморсько-Приазовський край
+            <option value="Black Sea–Sea of Azov coastal region">
+              Black Sea–Sea of Azov coastal region
             </option>
-            <option value="Кримський степовий">Кримський степовий край</option>
-            <option value="Гірський край - Українські Карпати">
-              Гірський край - Українські Карпати
+            <option value="Crimean steppe region">Crimean steppe region</option>
+            <option value="Carpathians mountain region">
+              Carpathians mountain region
             </option>
-            <option value="Кримський гірський край">
-              Кримський гірський край
+            <option value="Crimean mountain region">
+              Crimean mountain region
             </option>
-          </CustomSelect> */}
+          </CustomSelect>
           <CustomInput
-            label="Locality (natural / historical)"
+            label="locality"
             name="locality"
-            type="string"
             placeholder="Locality (natural / historical) of object. Example: Storozhove  mound complex"
           />
           <CustomInput
-            label="Object (natural / historical)"
+            label="object"
             name="object"
-            type="string"
             placeholder="Object (natural / historical) of the research object. Example: Rampart of the Eastern hillfort"
           />
           <CustomInput
-            label="Researcher"
+            label="researcher"
             name="researcher"
-            type="string"
             placeholder="Researcher or researchers. Example: Doroshkevych Serhii, Kushnir Anatolii"
           />
           <CustomInput
@@ -250,18 +329,12 @@ const FormObjectAddEng = () => {
             placeholder="Url to small-foto for the app from the Google Disk. Example: https://drive.google.com/file/d/1j4iGHQCk-iS7tKrh274Gkc4BnqovJb3r/view?usp=sharing"
           />
 
-          <Button
-            disabled={isSubmitting}
-            type="submit"
-            variant="contained"
-            color="success"
-          >
-            Відправити
-          </Button>
+          <button disabled={isSubmitting} type="submit">
+            Submit
+          </button>
         </Form>
       )}
     </Formik>
   );
 };
-
-export default FormObjectAddEng;
+export default AdvancedForm;

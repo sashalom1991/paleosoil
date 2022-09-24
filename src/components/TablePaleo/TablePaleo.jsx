@@ -11,16 +11,10 @@ import {
   TablePagination,
   Paper,
   Button,
-  Box,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
 import { ThreeCircles } from 'react-loader-spinner';
 import TablePaleoModal from '../TablePaleoModal/TablePaleoModal';
-import PropTypes from 'prop-types';
+import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors } from '../../redux/auth';
 import {
@@ -29,78 +23,9 @@ import {
   deletePaleosoilPoint,
   getLoading,
 } from '../../redux/paleosoil';
-// import LanguageDetector from 'i18next-browser-languagedetector';
+// import i18next from 'i18next';
 
 import { makeStyles } from '@mui/styles';
-
-function TablePaginationActions(props) {
-  const theme = useTheme();
-  const { count, page, rowsPerPage, onPageChange } = props;
-
-  const handleFirstPageButtonClick = event => {
-    onPageChange(event, 0);
-  };
-
-  const handleBackButtonClick = event => {
-    onPageChange(event, page - 1);
-  };
-
-  const handleNextButtonClick = event => {
-    onPageChange(event, page + 1);
-  };
-
-  const handleLastPageButtonClick = event => {
-    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
-
-  return (
-    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-      <IconButton
-        onClick={handleFirstPageButtonClick}
-        disabled={page === 0}
-        aria-label="first page"
-      >
-        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-      </IconButton>
-      <IconButton
-        onClick={handleBackButtonClick}
-        disabled={page === 0}
-        aria-label="previous page"
-      >
-        {theme.direction === 'rtl' ? (
-          <KeyboardArrowRight />
-        ) : (
-          <KeyboardArrowLeft />
-        )}
-      </IconButton>
-      <IconButton
-        onClick={handleNextButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
-      >
-        {theme.direction === 'rtl' ? (
-          <KeyboardArrowLeft />
-        ) : (
-          <KeyboardArrowRight />
-        )}
-      </IconButton>
-      <IconButton
-        onClick={handleLastPageButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
-      >
-        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-      </IconButton>
-    </Box>
-  );
-}
-
-TablePaginationActions.propTypes = {
-  count: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  page: PropTypes.number.isRequired,
-  rowsPerPage: PropTypes.number.isRequired,
-};
 
 const columns = [
   { id: 'id', label: '№', minWidth: 70, align: 'left' },
@@ -111,6 +36,15 @@ const columns = [
   { id: 'researcher', label: 'Дослідник', minWidth: 100, align: 'left' },
   { id: 'year', label: 'Рік вивчення', minWidth: 100, align: 'left' },
 ];
+
+// const columnsEn = [
+//   { id: 'id', label: '№', minWidth: 70, align: 'left' },
+//   { id: 'settlement', label: 'Settlement', minWidth: 100, align: 'left' },
+//   { id: 'region', label: 'Region', minWidth: 100, align: 'left' },
+//   { id: 'natural_zones', label: 'Natural zones', minWidth: 100, align: 'left' },
+//   { id: 'researcher', label: 'Researcher', minWidth: 100, align: 'left' },
+//   { id: 'year', label: 'Year of research', minWidth: 100, align: 'left' },
+// ];
 
 // Styling table
 const useStyles = makeStyles(theme => ({
@@ -124,6 +58,7 @@ const useStyles = makeStyles(theme => ({
 
 let Body = document.querySelector('body');
 
+// Table
 export default function TablePaleo() {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
@@ -131,9 +66,9 @@ export default function TablePaleo() {
   const data = useSelector(getAllPaleosoilPoint);
   const loading = useSelector(getLoading);
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  const dispatch = useDispatch();
   const [showModal, setShowModal] = React.useState(false);
   const [infoResearch, setInfoResearch] = React.useState({});
+  const dispatch = useDispatch();
 
   const toggleModal = () => {
     setShowModal(!showModal);

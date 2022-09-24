@@ -18,7 +18,7 @@ function Description() {
               >
                 QGIS Cloud
               </a>
-              {t('desc.text2')}
+              . {t('desc.text2')}
             </p>
           </div>
           <img

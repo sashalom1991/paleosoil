@@ -78,9 +78,11 @@ const fetchCurrentUser = createAsyncThunk(
 
     try {
       const { data } = await axios.get('/auth/current');
+      cogoToast.success('data');
       return data.user;
     } catch (error) {
       console.log(error);
+      cogoToast.success(error.message);
     }
   },
 );

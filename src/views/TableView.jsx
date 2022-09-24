@@ -1,9 +1,11 @@
-import TablePaleo from "../components/TablePaleo/TablePaleo"
+import TablePaleo from '../components/TablePaleo/TablePaleo';
 
 const TableView = () => {
-    return ( 
-        <TablePaleo/>
-    )
-}
+  return (
+    <>
+      <TablePaleo />
+    </>
+  );
+};
 
-export default TableView
+export default TableView;

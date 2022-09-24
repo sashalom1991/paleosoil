@@ -41,11 +41,11 @@ export default function Layout() {
 
   const LogOut = () => {
     dispatch(authOperations.logout());
-    console.log('OK');
   };
 
   const handelChangeLng = lng => {
     i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
   };
 
   return (

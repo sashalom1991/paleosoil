@@ -1,3 +1,7 @@
 import loginShema from './loginSchema';
+import addEngSchema from './addEngSchema';
+import addUkrSchema from './addUkrSchema';
 
-export module { loginShema };
+const schema = { loginShema, addEngSchema, addUkrSchema };
+
+export default schema;
