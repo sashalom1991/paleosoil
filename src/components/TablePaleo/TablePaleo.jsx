@@ -23,28 +23,8 @@ import {
   deletePaleosoilPoint,
   getLoading,
 } from '../../redux/paleosoil';
-// import i18next from 'i18next';
 
 import { makeStyles } from '@mui/styles';
-
-const columns = [
-  { id: 'id', label: '№', minWidth: 70, align: 'left' },
-  { id: 'settlement', label: 'Поселення', minWidth: 100, align: 'left' },
-  { id: 'district', label: 'Район', minWidth: 100, align: 'left' },
-  { id: 'region', label: 'Область', minWidth: 100, align: 'left' },
-  { id: 'natural_zones', label: 'Природна зона', minWidth: 100, align: 'left' },
-  { id: 'researcher', label: 'Дослідник', minWidth: 100, align: 'left' },
-  { id: 'year', label: 'Рік вивчення', minWidth: 100, align: 'left' },
-];
-
-// const columnsEn = [
-//   { id: 'id', label: '№', minWidth: 70, align: 'left' },
-//   { id: 'settlement', label: 'Settlement', minWidth: 100, align: 'left' },
-//   { id: 'region', label: 'Region', minWidth: 100, align: 'left' },
-//   { id: 'natural_zones', label: 'Natural zones', minWidth: 100, align: 'left' },
-//   { id: 'researcher', label: 'Researcher', minWidth: 100, align: 'left' },
-//   { id: 'year', label: 'Year of research', minWidth: 100, align: 'left' },
-// ];
 
 // Styling table
 const useStyles = makeStyles(theme => ({
@@ -68,8 +48,10 @@ export default function TablePaleo() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const [showModal, setShowModal] = React.useState(false);
   const [infoResearch, setInfoResearch] = React.useState({});
+  const [lng, setLng] = React.useState('ua');
   const dispatch = useDispatch();
 
+  console.log(lng);
   const toggleModal = () => {
     setShowModal(!showModal);
     if (showModal === 'false') {
@@ -98,6 +80,42 @@ export default function TablePaleo() {
   useEffect(() => {
     dispatch(fetchPaleosoilPoint());
   }, [dispatch]);
+
+  useEffect(() => {
+    setLng(localStorage.getItem('lng'));
+  }, [lng]);
+
+  const columnsUa = [
+    { id: 'id', label: '№', minWidth: 70, align: 'left' },
+    { id: 'settlement', label: 'Поселення', minWidth: 100, align: 'left' },
+    { id: 'district', label: 'Район', minWidth: 100, align: 'left' },
+    { id: 'region', label: 'Область', minWidth: 100, align: 'left' },
+    {
+      id: 'natural_zones',
+      label: 'Природна зона',
+      minWidth: 100,
+      align: 'left',
+    },
+    { id: 'researcher', label: 'Дослідник', minWidth: 100, align: 'left' },
+    { id: 'year', label: 'Рік вивчення', minWidth: 100, align: 'left' },
+  ];
+
+  const columnsEn = [
+    { id: 'id', label: '№', minWidth: 70, align: 'left' },
+    { id: 'settlement', label: 'Settlement', minWidth: 100, align: 'left' },
+    { id: 'district', label: 'District', minWidth: 100, align: 'left' },
+    { id: 'region', label: 'Region', minWidth: 100, align: 'left' },
+    {
+      id: 'natural_zones',
+      label: 'Natural zones',
+      minWidth: 100,
+      align: 'left',
+    },
+    { id: 'researcher', label: 'Researcher', minWidth: 100, align: 'left' },
+    { id: 'year', label: 'Year of research', minWidth: 100, align: 'left' },
+  ];
+
+  const columns = lng === 'en' ? columnsEn : columnsUa;
 
   return (
     <>

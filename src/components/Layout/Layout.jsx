@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+// import cogoToast from 'cogo-toast';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { GrClose } from 'react-icons/gr';
 import LoginIcon from '@mui/icons-material/Login';
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import Logo from '../../assets/img/logo.png';
 import Footer from '../Footer/Footer';
 
 import { useSelector } from 'react-redux';
@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next';
 
 import FlagUa from '../../assets/Icon/Flag_UA.svg';
 import FlagEn from '../../assets/Icon/Flag_UK.svg';
+import Logo from '../../assets/img/logo.png';
 import './Layout.css';
 
 export default function Layout() {
@@ -46,6 +47,24 @@ export default function Layout() {
   const handelChangeLng = lng => {
     i18n.changeLanguage(lng);
     localStorage.setItem('lng', lng);
+    document.location.reload();
+    // if (lng !== 'ua') {
+    //   cogoToast.success(
+    //     `Please, to correctly display the table and map, reload the page`,
+    //     {
+    //       position: 'top-right',
+    //       hideAfter: 4,
+    //     },
+    //   );
+    // } else {
+    //   cogoToast.success(
+    //     `Будь ласка перезавантажте сторінку для коректного відображення даних таблиці і карти`,
+    //     {
+    //       position: 'top-right',
+    //       hideAfter: 4,
+    //     },
+    //   );
+    // }
   };
 
   return (

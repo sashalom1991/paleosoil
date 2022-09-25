@@ -33,7 +33,10 @@ function NaturalArea({ data }) {
   };
 
   const onEachFeature = (e, layer) => {
-    let { name } = e.properties;
+    let name =
+      localStorage.getItem('lng') !== 'en'
+        ? e.properties.name
+        : e.properties.nameEn;
 
     layer.bindPopup(`<table>
         <tr>

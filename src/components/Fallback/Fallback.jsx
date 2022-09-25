@@ -1,4 +1,4 @@
-import { BallTriangle } from 'react-loader-spinner';
+import Excavate from '../../assets/img/excavate.gif';
 
 export default function Fallback() {
   return (
@@ -7,14 +7,10 @@ export default function Fallback() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        paddingTop: '30px',
       }}
     >
-      <BallTriangle
-        height="100"
-        width="100"
-        color="#FF6596"
-        ariaLabel="loading"
-      />
+      <img src={Excavate} alt="Loading....." />
     </div>
   );
 }

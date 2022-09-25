@@ -14,7 +14,8 @@ const fetchPaleosoilPoint = createAsyncThunk(
   async () => {
     fetchPaleosoilPoint.pending();
     try {
-      const { data } = await axios.get('/paleosoil/ua');
+      const lng = localStorage.getItem('lng') === 'en' ? 'en' : 'ua';
+      const { data } = await axios.get(`/paleosoil/${lng}`);
       return data;
     } catch (error) {
       fetchPaleosoilPoint.rejected(error);
