@@ -1,9 +1,38 @@
 import * as yup from 'yup';
 
 const addEngSchema = yup.object().shape({
-  id: yup.number().required(),
   settlement: yup.string().required(),
-  district: yup.string().required(),
+  region: yup
+    .string()
+    .oneOf([
+      'Cherkasy',
+      'Chernihiv',
+      'Chernivtsi',
+      'Dnipro',
+      'Donetsk',
+      'Ivano-Frankivsk',
+      'Kharkiv',
+      'Kherson',
+      'Khmelnytskyi',
+      'Kyiv',
+      'Kirovohrad',
+      'Luhansk',
+      'Lviv',
+      'Mykolaiv',
+      'Odesa',
+      'Poltava',
+      'Rivne',
+      'Sumy',
+      'Ternopil',
+      'Vinnytsia',
+      'Volyn',
+      'Zakarpattia',
+      'Zaporizhzhia',
+      'Zhytomyr',
+      'c. Kyiv',
+      'c. Sevastopol',
+    ])
+    .required(),
   x: yup.number('').min(4).required(),
   y: yup.number('').min(4).required(),
   natural_zones: yup

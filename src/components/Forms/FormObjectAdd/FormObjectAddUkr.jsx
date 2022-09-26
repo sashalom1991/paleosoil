@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Form, Formik } from 'formik';
 import { Button } from '@mui/material';
-import addUkrSchema from '../../schemas/addUkrSchema';
+import addUkrSchema from '../../../schemas/addUkrSchema';
 
 import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
@@ -11,7 +11,7 @@ import {
   addPaleosoilPoint,
   getAllPaleosoilPoint,
   fetchPaleosoilPoint,
-} from '../../redux/paleosoil';
+} from '../../../redux/paleosoil';
 
 const FormObjectAddUkr = () => {
   const data = useSelector(getAllPaleosoilPoint);
@@ -21,7 +21,6 @@ const FormObjectAddUkr = () => {
     dispatch(fetchPaleosoilPoint());
   }, [dispatch]);
 
-  console.log(data.length);
   const iD = data.length + 1;
 
   return (

@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 import cogoToast from 'cogo-toast';
 
-axios.defaults.baseURL = 'https://paleosoil-backend.herokuapp.com/api/';
+axios.defaults.baseURL = process.env.REACT_APP_URL_BACKEND;
 
 const fetchPaleosoilPoint = createAsyncThunk(
   'paleosoil/fetchPaleosoilPoint',
@@ -28,7 +28,8 @@ const deletePaleosoilPoint = createAsyncThunk(
   async id => {
     deletePaleosoilPoint.pending();
     try {
-      await axios.delete(`/paleosoil/ua/${id}`);
+      const lng = localStorage.getItem('lng') === 'en' ? 'en' : 'ua';
+      await axios.delete(`/paleosoil/${lng}/${id}`);
       return id;
     } catch (error) {
       deletePaleosoilPoint.rejected(error);

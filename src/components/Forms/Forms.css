@@ -1,0 +1,26 @@
+.FormsContainer{
+    width: 50%;
+    margin: 15px;
+}
+
+.FormsTitle{
+    padding: 15px 10px
+}
+
+.FormsText{
+    margin: 10px 5px
+}
+
+.FormsContainerMob{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+.FormsContainer {
+        display: none;
+    }
+
+    .FormsContainerMob {
+            display: block;
+        }
+}

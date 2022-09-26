@@ -12,8 +12,8 @@ import {
 import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import { modalStatus } from './modal/modalReducer';
-// import { paleoSoilApi } from './paleosoil/paleosoilFetch';
 import paleosoilReducer from './paleosoil';
+import paleosoilEnReducer from './paleosoilEn/paleosoilEn-reducer';
 import { authReducer } from './auth';
 
 const middleware = [
@@ -34,7 +34,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     paleosoil: paleosoilReducer,
-    // [paleoSoilApi.reducerPath]: paleoSoilApi.reducer,
+    paleosoilEn: paleosoilEnReducer,
     modal: modalStatus,
   },
   middleware,

@@ -51,7 +51,8 @@ export default function TablePaleo() {
   const [lng, setLng] = React.useState('ua');
   const dispatch = useDispatch();
 
-  console.log(lng);
+  console.log(data);
+
   const toggleModal = () => {
     setShowModal(!showModal);
     if (showModal === 'false') {

@@ -1,24 +1,31 @@
 import { Form, Formik } from 'formik';
 import { Button } from '@mui/material';
-import addEngSchema from '../../schemas/addEngSchema';
-
+import addEngSchema from '../../../schemas/addEngSchema';
 import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
 
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addPaleosoilPoint, getAllPaleosoilPoint } from '../../redux/paleosoil';
+import {
+  addPaleosoilEnPoint,
+  getAllPaleosoilEnPoint,
+  fetchPaleosoilEnPoint,
+} from '../../../redux/paleosoilEn';
 
 const FormObjectAddEng = () => {
-  const data = useSelector(getAllPaleosoilPoint);
+  const data = useSelector(getAllPaleosoilEnPoint);
   const dispatch = useDispatch();
-  const iD = data.length + 1;
 
+  useEffect(() => {
+    dispatch(fetchPaleosoilEnPoint());
+  }, [dispatch]);
+
+  const iD = data.length + 1;
   return (
     <Formik
       initialValues={{
         id: iD,
         settlement: '',
-        district: '',
         region: '',
         x: '',
         y: '',
@@ -43,18 +50,18 @@ const FormObjectAddEng = () => {
       validationSchema={addEngSchema}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          dispatch(addPaleosoilPoint(values));
+          dispatch(addPaleosoilEnPoint(values));
           actions.setSubmitting(false);
+          actions.resetForm();
         }, 1000);
       }}
     >
       {({ isSubmitting }) => (
         <Form>
           <CustomInput
-            label="Поселення"
+            label="settlement"
             name="settlement"
-            type="string"
-            placeholder="Settlement near the research object. Example: Storozhove"
+            placeholder="Please select a job"
           />
           <CustomSelect label="Область" name="region" placeholder="">
             <option value="">- - - - </option>
@@ -112,7 +119,7 @@ const FormObjectAddEng = () => {
             <option value="Ukraine Carpathians">Ukraine Carpathians</option>
             <option value="Crimean Mountains">Crimean Mountains</option>
           </CustomSelect>
-          {/* <CustomSelect
+          <CustomSelect
             label="Physiographical Lands"
             name="physiographical_l"
             placeholder=""
@@ -120,53 +127,50 @@ const FormObjectAddEng = () => {
             <option value="">- - - - </option>
             <option value="Polessye region">Polessye region</option>
             <option value="West Ukraine region">West Ukraine region</option>
-            <option value="Подільсько-Придніпровський">
-              Подільсько-Придніпровський край
+            <option value="Podolia–Dnipro forest steppe region">
+              Podolia–Dnipro forest steppe region
             </option>
-            <option value="Східноукраїнський">Східноукраїнський край</option>
-            <option value="Лівобережнодніпровський">
-              Лівобережнодніпровський край
+            <option value="East Ukraine forest steppe region">
+              East Ukraine forest steppe region
             </option>
-            <option value="Дністровсько-Дніпровський">
-              Дністровсько-Дніпровський край
+            <option value="Left bank of Dnipro forest steppe region">
+              Left bank of Dnipro forest steppe region
             </option>
-            <option value="Лівобережнодніпровсько-Приазовський">
-              Лівобережнодніпровсько-Приазовський край
+            <option value="Dnister–Dnipro region">Dnister–Dnipro region</option>
+            <option value="Left bank of Dnipro–Sea of Azov coast region">
+              Left bank of Dnipro–Sea of Azov coast region
             </option>
-            <option value="Донецький">Донецький край</option>
-            <option value="Задонецько-Донський">
-              Задонецько-Донський край
+            <option value="Donets region">Donets region</option>
+            <option value="Trans-Donets–Don region">
+              Trans-Donets–Don region
             </option>
-            <option value="Причорноморський середньостеповий">
-              Причорноморський середньостеповий край
+            <option value="Black Sea coast central steppe region">
+              Black Sea coast central steppe region
             </option>
-            <option value="Причорноморсько-Приазовський">
-              Причорноморсько-Приазовський край
+            <option value="Black Sea–Sea of Azov coastal region">
+              Black Sea–Sea of Azov coastal region
             </option>
-            <option value="Кримський степовий">Кримський степовий край</option>
-            <option value="Гірський край - Українські Карпати">
-              Гірський край - Українські Карпати
+            <option value="Crimean steppe region">Crimean steppe region</option>
+            <option value="Carpathians mountain region">
+              Carpathians mountain region
             </option>
-            <option value="Кримський гірський край">
-              Кримський гірський край
+            <option value="Crimean mountain region">
+              Crimean mountain region
             </option>
-          </CustomSelect> */}
+          </CustomSelect>
           <CustomInput
-            label="Locality (natural / historical)"
+            label="locality"
             name="locality"
-            type="string"
             placeholder="Locality (natural / historical) of object. Example: Storozhove  mound complex"
           />
           <CustomInput
-            label="Object (natural / historical)"
+            label="object"
             name="object"
-            type="string"
             placeholder="Object (natural / historical) of the research object. Example: Rampart of the Eastern hillfort"
           />
           <CustomInput
-            label="Researcher"
+            label="researcher"
             name="researcher"
-            type="string"
             placeholder="Researcher or researchers. Example: Doroshkevych Serhii, Kushnir Anatolii"
           />
           <CustomInput
@@ -256,12 +260,11 @@ const FormObjectAddEng = () => {
             variant="contained"
             color="success"
           >
-            Відправити
+            Submit
           </Button>
         </Form>
       )}
     </Formik>
   );
 };
-
 export default FormObjectAddEng;
