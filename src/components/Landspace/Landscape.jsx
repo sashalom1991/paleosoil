@@ -346,28 +346,29 @@ function Landscape({ data }) {
       Name_4_eng,
     } = e.properties;
 
-    const nameLand = localStorage.getItem('lng') === 'ua' ? Name_1 : Name_1_eng;
-    const nameType = localStorage.getItem('lng') === 'ua' ? Name_2 : Name_2_eng;
-    const nameZone = localStorage.getItem('lng') === 'ua' ? Name_3 : Name_3_eng;
-    const typeRelief =
+    const nameKind = localStorage.getItem('lng') === 'ua' ? Name_1 : Name_1_eng;
+    const nameSubtype =
+      localStorage.getItem('lng') === 'ua' ? Name_2 : Name_2_eng;
+    const nameType = localStorage.getItem('lng') === 'ua' ? Name_3 : Name_3_eng;
+    const typeClass =
       localStorage.getItem('lng') === 'ua' ? Name_4 : Name_4_eng;
 
     layer.bindPopup(`<table>
       <tr>
-        <td><b>${t('landscape.land')}</b></td>
-        <td>${nameLand}</td>
+        <td><b>${t('landscape.kind')}</b></td>
+        <td>${nameKind}</td>
+      </tr>
+      <tr>
+        <td><b>${t('landscape.subtype')}</b></td>
+        <td>${nameSubtype}</td>
       </tr>
       <tr>
         <td><b>${t('landscape.type')}</b></td>
         <td>${nameType}</td>
       </tr>
       <tr>
-        <td><b>${t('landscape.zone')}</b></td>
-        <td>${nameZone}</td>
-      </tr>
-      <tr>
-        <td><b>${t('landscape.relief')}</b></td>
-        <td>${typeRelief}</td>
+        <td><b>${t('landscape.class')}</b></td>
+        <td>${typeClass}</td>
       </tr>
     </table>`);
   };

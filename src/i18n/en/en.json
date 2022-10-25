@@ -36,10 +36,10 @@
     "landspace": "Landscape"
   },
   "landscape": {
-    "land": "Landscape:",
-    "type": "Type of landscape:",
-    "zone": "Natural zone",
-    "relief": "Type of relief"
+    "kind": "Landscape kind:",
+    "subtype": "Landscape subtype:",
+    "type": "Lanscape type:",
+    "class": "Landscape class:"
   },
   "naturalArea": {
     "zone": "Zones:"
