@@ -1,5 +1,6 @@
 import './Description.css';
-import MapPaleoSoil from '../../assets/img/description_map.png';
+import MapPaleoSoil_05 from '../../assets/img/description_map@0.5.webp';
+import MapPaleoSoil_025 from '../../assets/img/description_map@0.25.webp';
 import { useTranslation } from 'react-i18next';
 
 function Description() {
@@ -21,7 +22,8 @@ function Description() {
             </p>
           </div>
           <img
-            src={MapPaleoSoil}
+            srcSet={(MapPaleoSoil_05, MapPaleoSoil_025)}
+            src={MapPaleoSoil_05}
             alt="Растрова карта ґрутнів"
             className="DescImg"
           />

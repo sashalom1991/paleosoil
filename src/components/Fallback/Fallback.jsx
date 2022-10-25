@@ -1,4 +1,4 @@
-import Excavate from '../../assets/img/excavate.gif';
+import { MutatingDots } from 'react-loader-spinner';
 
 export default function Fallback() {
   return (
@@ -10,7 +10,17 @@ export default function Fallback() {
         paddingTop: '30px',
       }}
     >
-      <img src={Excavate} alt="Loading....." />
+      <MutatingDots
+        height="100"
+        width="100"
+        color="#4fa94d"
+        secondaryColor="#4fa94d"
+        radius="12.5"
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
     </div>
   );
 }

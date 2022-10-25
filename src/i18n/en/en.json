@@ -32,11 +32,14 @@
   "mapPaleo": {
     "paleosoil": "Paleopedology object",
     "naturalArea": "Natural zones",
-    "soil": "soil"
+    "soil": "Soil",
+    "landspace": "Landscape"
   },
   "landscape": {
-    "soil": "Soil:",
-    "class": "Class:"
+    "land": "Landscape:",
+    "type": "Type of landscape:",
+    "zone": "Natural zone",
+    "relief": "Type of relief"
   },
   "naturalArea": {
     "zone": "Zones:"

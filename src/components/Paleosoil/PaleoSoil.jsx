@@ -1,9 +1,7 @@
 import { Marker, Popup } from 'react-leaflet';
+import groupBy from 'lodash.groupby';
 import Icons from '../Paleosoil/PaleoIcons';
 import PopupPaleoSoil from '../Popup/PopupPaleoSoil';
-// import { useGetPointsQuery } from '../../redux/paleosoil/paleosoilFetch';
-// import MarkerClusterGroup from "react-leaflet-markercluster";
-// import "react-leaflet-markercluster/dist/styles.min.css";
 
 function IconType(type) {
   if (type === 'AL - Allerod') {
@@ -31,10 +29,12 @@ function IconType(type) {
   }
 }
 
-function Paleosoil({ points }) {
+function Paleosoil({ points, holocenEtaps }) {
+  const groupedByType = groupBy(points, point => point.period_holocene);
+
   return (
     <>
-      {points.map(point => {
+      {groupedByType[holocenEtaps]?.map(point => {
         const latitude = point.y;
         const longitude = point.x;
         return (

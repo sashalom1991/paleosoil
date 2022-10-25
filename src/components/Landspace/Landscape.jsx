@@ -2,89 +2,321 @@ import { GeoJSON } from 'react-leaflet';
 import { t } from 'i18next';
 
 function Landscape({ data }) {
-  const mapPolygonColorSoil = id => {
+  const mapPolygonColorLand = id => {
     return id === 1
-      ? 'rgba(234,231,175,1.0)'
+      ? '#27754c'
       : id === 2
-      ? 'rgba(248,233,169,1.0)'
+      ? '#1c686f'
       : id === 3
-      ? 'rgba(255,210,181,1.0)'
+      ? '#41696e'
       : id === 4
-      ? 'rgba(234,204,180,1.0)'
+      ? '#77b3d6'
       : id === 5
-      ? 'rgba(227,183,154,1.0)'
+      ? '#94d0f1'
       : id === 6
-      ? 'rgba(207,199,137,1.0)'
+      ? '#d5efee'
       : id === 7
-      ? 'rgba(189,184,142,1.0)'
+      ? '#e9e5dc'
       : id === 8
-      ? 'rgba(178,163,120,1.0)'
+      ? '#55757e'
       : id === 9
-      ? 'rgba(213,190,174,1.0)'
+      ? '#6b7ca2'
       : id === 10
-      ? 'rgba(202,150,129,1.0)'
+      ? '#8fa7b5'
       : id === 11
-      ? 'rgba(204,193,197,1.0)'
+      ? '#99bec7'
       : id === 12
-      ? 'rgba(146,134,138,1.0)'
+      ? '#b0c9d6'
       : id === 13
-      ? 'rgba(157,129,118,1.0)'
+      ? '#d2e4f1'
       : id === 14
-      ? 'rgba(183,166,156,1.0)'
+      ? '#c0d0e7'
       : id === 15
-      ? 'rgba(205,192,184,1.0)'
+      ? '#61b7a7'
       : id === 16
-      ? 'rgba(219,212,202,1.0)'
+      ? '#80c6c4'
       : id === 17
-      ? 'rgba(207,175,178,1.0)'
+      ? '#d3f4ea'
       : id === 18
-      ? 'rgba(185,140,101,1.0)'
+      ? '#e4f4f6'
       : id === 19
-      ? 'rgba(194,159,155,1.0)'
+      ? '#d5ebf4'
       : id === 20
-      ? 'rgba(161,144,150,1.0)'
+      ? '#304124'
       : id === 21
-      ? 'rgba(215,214,212,1.0)'
+      ? '#6c8369'
       : id === 22
-      ? 'rgba(177,160,153,1.0)'
+      ? '#4c866d'
       : id === 23
-      ? 'rgba(86,140,135,1.0)'
+      ? '#2a6226'
       : id === 24
-      ? 'rgba(128,152,130,1.0)'
+      ? '#4e864c'
       : id === 25
-      ? 'rgba(216,218,178,1.0)'
+      ? '#70aa7a'
       : id === 26
-      ? 'rgba(226,170,199,1.0)'
+      ? '#617e4c'
       : id === 27
-      ? 'rgba(198,124,113,1.0)'
+      ? '#699a4d'
       : id === 28
-      ? 'rgba(216,183,176,1.0)'
+      ? '#6b8d69'
       : id === 29
-      ? 'rgba(150,185,150,1.0)'
+      ? '#8bb684'
       : id === 30
-      ? 'rgba(178,205,158,1.0)'
+      ? '#7e9d7a'
       : id === 31
-      ? 'rgba(108,133,100,1.0)'
+      ? '#8eb387'
       : id === 32
-      ? 'rgba(149,91,132,1.0)'
+      ? '#9baea3'
       : id === 33
-      ? 'rgba(233,191,224,1.0)'
+      ? '#cde0d0'
       : id === 34
-      ? 'rgba(121,145,109,1.0)'
+      ? '#99baba'
       : id === 35
-      ? 'rgba(220,175,153,1.0)'
+      ? '#b5c9cf'
       : id === 36
-      ? 'rgba(227,189,197,1.0)'
+      ? '#e0e7ee'
       : id === 37
-      ? 'rgba(150,66,67,1.0)'
+      ? '#c6dccf'
       : id === 38
-      ? 'rgba(224,202,181,1.0)'
+      ? '#b4ccbd'
       : id === 39
-      ? 'rgba(117,80,116,1.0)'
+      ? '#9b8b60'
       : id === 40
-      ? 'rgba(247,217,192,1.0)'
+      ? '#b0aa87'
       : id === 41
-      ? 'rgba(222,145,130,1.0)'
+      ? '#a5ca5f'
+      : id === 42
+      ? '#cdf18f'
+      : id === 43
+      ? '#c4d491'
+      : id === 44
+      ? '#cae9b8'
+      : id === 45
+      ? '#afdbad'
+      : id === 46
+      ? '#94be90'
+      : id === 47
+      ? '#83c1a2'
+      : id === 48
+      ? '#b7e1d4'
+      : id === 49
+      ? '#c5a98f'
+      : id === 50
+      ? '#b3d0ae'
+      : id === 51
+      ? '#9c9f82'
+      : id === 52
+      ? '#a5bba2'
+      : id === 53
+      ? '#c0d7af'
+      : id === 54
+      ? '#cbd9ae'
+      : id === 55
+      ? '#d4e6d4'
+      : id === 56
+      ? '#e0eff0'
+      : id === 57
+      ? '#bdc8aa'
+      : id === 58
+      ? '#c9d4b5'
+      : id === 59
+      ? '#c6d9c7'
+      : id === 60
+      ? '#e0e3bd'
+      : id === 61
+      ? '#e4f2e5'
+      : id === 62
+      ? '#9dc482'
+      : id === 63
+      ? '#938260'
+      : id === 64
+      ? '#b89190'
+      : id === 65
+      ? '#f8f2db'
+      : id === 66
+      ? '#f6f5ea'
+      : id === 67
+      ? '#bbd1a7'
+      : id === 68
+      ? '#def891'
+      : id === 69
+      ? '#fdffb8'
+      : id === 70
+      ? '#bcd089'
+      : id === 71
+      ? '#c7c99f'
+      : id === 72
+      ? '#f8ffde'
+      : id === 73
+      ? '#fdffe3'
+      : id === 74
+      ? '#e9e7f0'
+      : id === 75
+      ? '#e8b978'
+      : id === 76
+      ? '#f0d4aa'
+      : id === 77
+      ? '#e59f78'
+      : id === 78
+      ? '#e68b7e'
+      : id === 79
+      ? '#de8b9f'
+      : id === 80
+      ? '#fff2d3'
+      : id === 81
+      ? '#f2d180'
+      : id === 82
+      ? '#ffe797'
+      : id === 83
+      ? '#f9ebd6'
+      : id === 84
+      ? '#d9dbdf'
+      : id === 85
+      ? '#9d8780'
+      : id === 86
+      ? '#cfb7a6'
+      : id === 87
+      ? '#f4ebe9'
+      : id === 88
+      ? '#9d8087'
+      : id === 89
+      ? '#9c6660'
+      : id === 90
+      ? '#8c6f48'
+      : id === 91
+      ? '#b26271'
+      : id === 92
+      ? '#a9be84'
+      : id === 93
+      ? '#c8cca5'
+      : id === 94
+      ? '#e5f2e2'
+      : id === 95
+      ? '#eafdff'
+      : id === 96
+      ? '#eec9b1'
+      : id === 97
+      ? '#e5a18c'
+      : id === 98
+      ? '#d5a7a6'
+      : id === 99
+      ? '#e08985'
+      : id === 100
+      ? '#d45f63'
+      : id === 101
+      ? '#e97a76'
+      : id === 102
+      ? '#ce444f'
+      : id === 103
+      ? '#e15f42'
+      : id === 104
+      ? '#f9b9fa'
+      : id === 105
+      ? '#f29fbd'
+      : id === 106
+      ? '#ea95a6'
+      : id === 107
+      ? '#a7487d'
+      : id === 108
+      ? '#c95f85'
+      : id === 109
+      ? '#db7798'
+      : id === 110
+      ? '#d96ab1'
+      : id === 111
+      ? '#d8afde'
+      : id === 112
+      ? '#c672c9'
+      : id === 113
+      ? '#f3d4ff'
+      : id === 114
+      ? '#efa0f5'
+      : id === 115
+      ? '#cda3bd'
+      : id === 116
+      ? '#a99fa6'
+      : id === 117
+      ? '#dc6463'
+      : id === 118
+      ? '#a1403e'
+      : id === 119
+      ? '#d35b4d'
+      : id === 120
+      ? '#c52e3d'
+      : id === 121
+      ? '#273622'
+      : id === 122
+      ? '#11382f'
+      : id === 123
+      ? '#59473a'
+      : id === 124
+      ? '#783f32'
+      : id === 125
+      ? '#69291b'
+      : id === 126
+      ? '#b97358'
+      : id === 127
+      ? '#c95f6f'
+      : id === 128
+      ? '#dd968d'
+      : id === 129
+      ? '#d796bc'
+      : id === 130
+      ? '#dee9ea'
+      : id === 131
+      ? '#671111'
+      : id === 132
+      ? '#5c1a22'
+      : id === 133
+      ? '#af5364'
+      : id === 134
+      ? '#cfb7da'
+      : id === 135
+      ? '#ac9fba'
+      : id === 136
+      ? '#d7bfc1'
+      : id === 137
+      ? '#863933'
+      : id === 138
+      ? '#d39282'
+      : id === 139
+      ? '#6b3c2e'
+      : id === 140
+      ? '#7c1417'
+      : id === 141
+      ? '#9b2e3e'
+      : id === 142
+      ? '#af685b'
+      : id === 143
+      ? '#260000'
+      : id === 144
+      ? '#80085c'
+      : id === 145
+      ? '#a2233d'
+      : id === 146
+      ? '#c42245'
+      : id === 147
+      ? '#b81736'
+      : id === 148
+      ? '#851431'
+      : id === 149
+      ? '#a70940'
+      : id === 150
+      ? '#890024'
+      : id === 151
+      ? '#a01050'
+      : id === 152
+      ? '#5e0004'
+      : id === 153
+      ? '#821c4d'
+      : id === 154
+      ? '#c65655'
+      : id === 155
+      ? '#8a93ab'
+      : id === 156
+      ? '#0f4b35'
+      : id === 157
+      ? '#000445'
       : 'fff';
   };
 
@@ -97,27 +329,57 @@ function Landscape({ data }) {
       weight: 1.0,
       fill: true,
       fillOpacity: 0.7,
-      fillColor: '#fff',
+      fillColor: mapPolygonColorLand(features.properties.Id),
       interactive: true,
     };
   };
 
   const onEachFeature = (e, layer) => {
-    let { Name, Class } = e.properties;
+    let {
+      Name_1,
+      Name_2,
+      Name_3,
+      Name_4,
+      Name_1_eng,
+      Name_2_eng,
+      Name_3_eng,
+      Name_4_eng,
+    } = e.properties;
+
+    const nameLand = localStorage.getItem('lng') === 'ua' ? Name_1 : Name_1_eng;
+    const nameType = localStorage.getItem('lng') === 'ua' ? Name_2 : Name_2_eng;
+    const nameZone = localStorage.getItem('lng') === 'ua' ? Name_3 : Name_3_eng;
+    const typeRelief =
+      localStorage.getItem('lng') === 'ua' ? Name_4 : Name_4_eng;
 
     layer.bindPopup(`<table>
       <tr>
-        <td><b>${t('landscape.soil')}</b></td>
-        <td>${Name}</td>
+        <td><b>${t('landscape.land')}</b></td>
+        <td>${nameLand}</td>
       </tr>
       <tr>
-        <td><b>${t('landscape.class')}</b></td>
-        <td>${Class}</td>
+        <td><b>${t('landscape.type')}</b></td>
+        <td>${nameType}</td>
+      </tr>
+      <tr>
+        <td><b>${t('landscape.zone')}</b></td>
+        <td>${nameZone}</td>
+      </tr>
+      <tr>
+        <td><b>${t('landscape.relief')}</b></td>
+        <td>${typeRelief}</td>
       </tr>
     </table>`);
   };
 
-  return <GeoJSON data={data} style={stylingSoil}></GeoJSON>;
+  return (
+    <GeoJSON
+      data={data}
+      style={stylingSoil}
+      id={data.features.Id}
+      onEachFeature={onEachFeature}
+    ></GeoJSON>
+  );
 }
 
 export default Landscape;

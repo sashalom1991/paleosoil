@@ -13,6 +13,7 @@ import Fallback from './Fallback/Fallback';
 const LoginView = lazy(() => import('../views/LoginView'));
 const NewObjectAddView = lazy(() => import('../views/NewObjectAddView'));
 const HomeView = lazy(() => import('../views/HomeView'));
+const AnalyticView = lazy(() => import('../views/AnalyticsView'));
 const TableView = lazy(() => import('../views/TableView'));
 const MapView = lazy(() => import('../views/MapView'));
 const NotFound = lazy(() => import('../views/NotFound'));
@@ -45,6 +46,14 @@ function App() {
                   </PublicRoute>
                 }
               />
+              {/* <Route
+                path="/analytic"
+                element={
+                  <PublicRoute>
+                    <AnalyticView />
+                  </PublicRoute>
+                }
+              /> */}
               <Route
                 path="/map"
                 element={
@@ -76,26 +85,6 @@ function App() {
       )}
     </div>
   );
-
-  // return (
-  //   <Suspense fallback={<h2>Loading...</h2>}>
-  //     <Routes>
-  //       <Route
-  //         path="add"
-  //         element={
-  //           <PrivRouter>
-  //             <NewObjectAddView />
-  //           </PrivRouter>
-  //         }
-  //       />
-  //       <Route path="/" element={<HomeView />} />
-  //       <Route path="/map" element={<MapView />} />
-  //       <Route path="/table" element={<TableView />} />
-  //       <Route path="/login" element={<LoginView />} />
-  //       <Route path="*" element={<NotFound />} />
-  //     </Routes>
-  //   </Suspense>
-  // );
 }
 
 export default App;

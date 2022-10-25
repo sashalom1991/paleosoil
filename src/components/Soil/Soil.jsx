@@ -103,16 +103,19 @@ function Soil({ data }) {
   };
 
   const onEachFeature = (e, layer) => {
-    let { Name, Class } = e.properties;
+    let { Name_1, Name_2, Name_1_eng, Name_2_eng } = e.properties;
+    const nameSoil = localStorage.getItem('lng') === 'ua' ? Name_1 : Name_1_eng;
+    const nameClass =
+      localStorage.getItem('lng') === 'ua' ? Name_2 : Name_2_eng;
 
     layer.bindPopup(`<table>
       <tr>
         <td className="SoilPopup"><b>${t('soil.nameSoil')}</b></td>
-        <td className="SoilPopup">${Name}</td>
+        <td className="SoilPopup">${nameSoil}</td>
       </tr>
       <tr>
         <td className="SoilPopup"><b>${t('soil.classSoil')}</b></td>
-        <td className="SoilPopup">${Class}</td>
+        <td className="SoilPopup">${nameClass}</td>
       </tr>
     </table>`);
   };

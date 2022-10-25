@@ -48,23 +48,6 @@ export default function Layout() {
     i18n.changeLanguage(lng);
     localStorage.setItem('lng', lng);
     document.location.reload();
-    // if (lng !== 'ua') {
-    //   cogoToast.success(
-    //     `Please, to correctly display the table and map, reload the page`,
-    //     {
-    //       position: 'top-right',
-    //       hideAfter: 4,
-    //     },
-    //   );
-    // } else {
-    //   cogoToast.success(
-    //     `Будь ласка перезавантажте сторінку для коректного відображення даних таблиці і карти`,
-    //     {
-    //       position: 'top-right',
-    //       hideAfter: 4,
-    //     },
-    //   );
-    // }
   };
 
   return (
@@ -88,6 +71,13 @@ export default function Layout() {
               >
                 {t('layout.table')}
               </NavLink>
+              {/* <NavLink
+                className="NavigationLink"
+                to="/analytic"
+                onClick={mobileMenu}
+              >
+                Аналітика
+              </NavLink> */}
               <NavLink
                 className="NavigationLink"
                 to="/map"
@@ -125,10 +115,20 @@ export default function Layout() {
         </nav>
         <div>
           <button onClick={() => handelChangeLng('ua')}>
-            <img src={FlagUa} alt="flag of Ukraine" className="Flag" />
+            <img
+              src={FlagUa}
+              alt="flag of Ukraine"
+              className="Flag"
+              width="40px"
+            />
           </button>
           <button onClick={() => handelChangeLng('en')}>
-            <img src={FlagEn} alt="flag of the UK" className="Flag" />
+            <img
+              src={FlagEn}
+              alt="flag of the UK"
+              className="Flag"
+              width="40px"
+            />
           </button>
         </div>
         <div className="MobMenuIcon">
