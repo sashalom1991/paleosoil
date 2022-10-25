@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpaleosoil=self.webpackChunkpaleosoil||[]).push([[515],{4515:function(e,n,l){l.r(n);var s=l(3329);n.default=function(){return(0,s.jsx)(s.Fragment,{children:(0,s.jsx)("h2",{children:"Analytics"})})}}}]);
+//# sourceMappingURL=515.c3714741.chunk.js.map
