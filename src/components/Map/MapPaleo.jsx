@@ -86,16 +86,18 @@ function MapPaleo() {
               url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
             />
           </LayersControl.BaseLayer>
+          <LayersControl.BaseLayer name="Esri World Map">
+            <TileLayer
+              attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            />
+          </LayersControl.BaseLayer>
         </LayersControl>
         {/* Button  1 */}
         <LeafletButton position="topleft" onClick={showLegend}>
           Legend
         </LeafletButton>
       </MapContainer>
-      {/* <div>
-        <input onChange={searchFilter} />
-        <ul></ul>
-      </div> */}
     </>
   );
 }
