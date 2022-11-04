@@ -16,7 +16,7 @@ import Soil from '../Soil/Soil';
 
 import natural_area from '../../data/natural_area.json';
 import landspace from '../../data/landspace.json';
-import soil from '../../data/soil3.json';
+import soil from '../../data/soil.json';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getAllPaleosoilPoint,

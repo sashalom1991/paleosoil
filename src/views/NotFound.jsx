@@ -9,7 +9,7 @@ const NotFound = () => {
           Такої сторінки не існує або Ви ввели не парвильну адресу. Errors 404.
           Not Found
         </p>
-        <img src={Anima} alt="копай" />
+        <img src={Anima} alt="not found" />
       </div>
     </>
   );

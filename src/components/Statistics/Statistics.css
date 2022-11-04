@@ -1,0 +1,25 @@
+.analyticContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.chart{
+    width: 50%;
+}
+
+.mapChart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .analyticContainer {
+           flex-direction: column;
+        }
+    .chart{
+        width: 100%;
+    }
+}

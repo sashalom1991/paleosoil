@@ -59,7 +59,7 @@ export default function Layout() {
         </NavLink>
 
         <nav>
-          {(burMenu || screenWidth > 480) && (
+          {(burMenu || screenWidth > 580) && (
             <div className="Navigation" id="navigation">
               <NavLink className="NavigationLink" to="/" onClick={mobileMenu}>
                 {t('layout.main')}
@@ -71,19 +71,19 @@ export default function Layout() {
               >
                 {t('layout.table')}
               </NavLink>
-              {/* <NavLink
-                className="NavigationLink"
-                to="/analytic"
-                onClick={mobileMenu}
-              >
-                Аналітика
-              </NavLink> */}
               <NavLink
                 className="NavigationLink"
                 to="/map"
                 onClick={mobileMenu}
               >
                 {t('layout.map')}
+              </NavLink>
+              <NavLink
+                className="NavigationLink"
+                to="/analytic"
+                onClick={mobileMenu}
+              >
+                {t('layout.statistic')}
               </NavLink>
               <NavLink
                 className="NavigationLink"

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors } from '../redux/auth';
 // import { authOperations } from '../redux/auth';
@@ -13,7 +13,7 @@ import Fallback from './Fallback/Fallback';
 const LoginView = lazy(() => import('../views/LoginView'));
 const NewObjectAddView = lazy(() => import('../views/NewObjectAddView'));
 const HomeView = lazy(() => import('../views/HomeView'));
-const AnalyticView = lazy(() => import('../views/AnalyticsView'));
+const StatisticsView = lazy(() => import('../views/StatisticsView'));
 const TableView = lazy(() => import('../views/TableView'));
 const MapView = lazy(() => import('../views/MapView'));
 const NotFound = lazy(() => import('../views/NotFound'));
@@ -46,14 +46,14 @@ function App() {
                   </PublicRoute>
                 }
               />
-              {/* <Route
+              <Route
                 path="/analytic"
                 element={
                   <PublicRoute>
-                    <AnalyticView />
+                    <StatisticsView />
                   </PublicRoute>
                 }
-              /> */}
+              />
               <Route
                 path="/map"
                 element={
