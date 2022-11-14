@@ -14,8 +14,8 @@ import { authSelectors } from '../../redux/auth';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import FlagUa from '../../assets/Icon/Flag_UA.svg';
-import FlagEn from '../../assets/Icon/Flag_UK.svg';
+import FlagUa from '../../assets/icon/Flag_UA.svg';
+import FlagEn from '../../assets/icon/Flag_UK.svg';
 import Logo from '../../assets/img/logo.png';
 import './Layout.css';
 

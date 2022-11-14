@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import L from 'leaflet';
 import './Legend.css';
-import AL from '../../assets/Icon/AL.png';
+import AL from '../../assets/icon/AL.png';
 
 function Legend({ map }) {
   console.log(map);

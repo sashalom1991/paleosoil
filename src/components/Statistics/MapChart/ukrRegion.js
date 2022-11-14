@@ -51,7 +51,7 @@ const Ukr = [
     GID_1: 'UKR.9_1',
     NAME_1: 'Kherson',
     NL_NAME_1: 'Херсонська',
-    value: 0,
+    value: 1,
   },
   {
     GID_1: 'UKR.10_1',
@@ -127,19 +127,19 @@ const Ukr = [
     value: 8,
   },
   {
-    GID_1: 'UKR.23_1',
+    GID_1: 'UKR.24_1',
     NAME_1: 'Vinnytsia',
     NL_NAME_1: 'Вінницька',
     value: 7,
   },
   {
-    GID_1: 'UKR.24_1',
+    GID_1: 'UKR.25_1',
     NAME_1: 'Volyn',
     NL_NAME_1: 'Волинська',
     value: 0,
   },
   {
-    GID_1: 'UKR.25_1',
+    GID_1: 'UKR.23_1',
     NAME_1: 'Zakarpattia',
     NL_NAME_1: 'Закарпатська',
     value: 0,
