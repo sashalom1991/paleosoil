@@ -35,7 +35,10 @@ export default function Footer() {
             <li className="textItem avtor">
               {t('footer.avtorName1')}
               <span className="avtorIcon">
-                <a href="https://www.facebook.com/ignanu/" className="link">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100004426594071"
+                  className="link"
+                >
                   <img
                     src={LogoFacebook}
                     width="20px"
