@@ -61,9 +61,9 @@ const FormObjectAddEng = () => {
           <CustomInput
             label="settlement"
             name="settlement"
-            placeholder="Please select a job"
+            placeholder="Please select a settlement"
           />
-          <CustomSelect label="Область" name="region" placeholder="">
+          <CustomSelect label="Region" name="region" placeholder="">
             <option value="">- - - - </option>
             <option value="Cherkasy">Cherkasy</option>
             <option value="Chernihiv">Chernihiv</option>
@@ -159,17 +159,17 @@ const FormObjectAddEng = () => {
             </option>
           </CustomSelect>
           <CustomInput
-            label="locality"
+            label="Locality"
             name="locality"
             placeholder="Locality (natural / historical) of object. Example: Storozhove  mound complex"
           />
           <CustomInput
-            label="object"
+            label="Object"
             name="object"
             placeholder="Object (natural / historical) of the research object. Example: Rampart of the Eastern hillfort"
           />
           <CustomInput
-            label="researcher"
+            label="Researcher"
             name="researcher"
             placeholder="Researcher or researchers. Example: Doroshkevych Serhii, Kushnir Anatolii"
           />

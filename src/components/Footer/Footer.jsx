@@ -5,11 +5,29 @@ import LogoIgu from '../../assets/icon/logo_Igu.png';
 import LogoLinkedIn from '../../assets/icon/logo_linkedin.png';
 import { t } from 'i18next';
 
+const avtor = [
+  {
+    name: t('footer.avtorName1'),
+    fb: 'https://www.facebook.com/profile.php?id=100004426594071',
+    linkeId: 'https://www.linkedin.com/in/anatolii-kushnir-290815175/',
+  },
+  {
+    name: t('footer.avtorName2'),
+    fb: 'https://www.facebook.com/sasha.leiberiuk/',
+    linkeId: 'https://www.linkedin.com/in/oleksandr-leiberiuk-a92778215/',
+  },
+  {
+    name: t('footer.avtorName3'),
+    fb: 'https://www.facebook.com/volodymyr.shvaiko.97',
+    linkeId: 'https://www.linkedin.com/in/volodymyrshvaiko/',
+  },
+];
+
 export default function Footer() {
   const date = new Date();
   return (
     <footer className="footerContainer">
-      <h2 className="footerTitle">{t('footer.title')}</h2>
+      <h3 className="footerTitle">{t('footer.title')}</h3>
       <p className="footerText">{t('footer.text')}</p>
       <ul className="contactList">
         <li className="item">
@@ -32,100 +50,28 @@ export default function Footer() {
           <h3 className="footerTitle titleItem">{t('footer.phone')}</h3>
           <ul>
             <li className="textItem"> 044-234-92-57</li>
-            <li className="textItem avtor">
-              {t('footer.avtorName1')}
-              <span className="avtorIcon">
-                <a
-                  href="https://www.facebook.com/profile.php?id=100004426594071"
-                  className="link"
-                >
-                  <img
-                    src={LogoFacebook}
-                    width="20px"
-                    height="20px"
-                    alt="logo facebook"
-                  />
-                </a>
-              </span>
-              <span className="avtorIcon">
-                <a
-                  href="https://www.linkedin.com/in/anatolii-kushnir-290815175/"
-                  className="link"
-                >
-                  <img
-                    src={LogoLinkedIn}
-                    width="20px"
-                    height="20px"
-                    alt="logo linkedIn"
-                  />
-                </a>
-              </span>
-            </li>
-            <li className="textItem avtor">
-              {t('footer.avtorName2')}
-              <span className="avtorIcon">
-                <a
-                  href="https://www.facebook.com/sasha.leiberiuk/"
-                  className="link"
-                >
-                  <img
-                    src={LogoFacebook}
-                    width="20px"
-                    height="20px"
-                    alt="logo facebook"
-                  />
-                </a>
-              </span>
-              <span className="avtorIcon">
-                <a
-                  href="https://www.linkedin.com/in/oleksandr-leiberiuk-a92778215/"
-                  className="link"
-                >
-                  <img
-                    src={LogoLinkedIn}
-                    width="20px"
-                    height="20px"
-                    alt="logo linkedIn"
-                  />
-                </a>
-              </span>
-            </li>
-            <li className="textItem avtor">
-              {t('footer.avtorName3')}
-              <span className="avtorIcon">
-                <a
-                  href="https://www.facebook.com/volodymyr.shvaiko.97"
-                  className="link"
-                >
-                  <img
-                    src={LogoFacebook}
-                    width="20px"
-                    height="20px"
-                    alt="logo facebook"
-                  />
-                </a>
-              </span>
-              <span className="avtorIcon">
-                <a
-                  href="https://www.linkedin.com/in/volodymyrshvaiko/"
-                  className="link"
-                >
-                  <img
-                    src={LogoLinkedIn}
-                    width="20px"
-                    height="20px"
-                    alt="logo linkedIn"
-                  />
-                </a>
-              </span>
-            </li>
+            {avtor.map(info => (
+              <li className="textItem avtor">
+                {info.name}
+                <span className="avtorIcon">
+                  <a href={info.fb} className="link">
+                    <img src={LogoFacebook} alt="logo facebook" />
+                  </a>
+                </span>
+                <span className="avtorIcon">
+                  <a href={info.linkeId} className="link">
+                    <img src={LogoLinkedIn} alt="logo linkedIn" />
+                  </a>
+                </span>
+              </li>
+            ))}
           </ul>
         </li>
         <li className="item">
           <h3 className="footerTitle titleItem">{t('footer.webPage')}</h3>
           <ul className="listSite">
             <li>
-              <a href="https://www.facebook.com/ignanu/" className="link">
+              <a href="https://www.facebook.com/ignanu/" className="linkIGU">
                 <img
                   src={LogoFacebook}
                   width="30px"
@@ -136,7 +82,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://igu.org.ua/uk" className="link">
+              <a href="https://igu.org.ua/uk" className="linkIGU">
                 <img
                   src={LogoIgu}
                   width="30px"
