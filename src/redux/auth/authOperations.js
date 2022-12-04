@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import cogoToast from 'cogo-toast';
 
-axios.defaults.baseURL = 'https://paleosoil-backend.herokuapp.com/api/';
+axios.defaults.baseURL = process.env.REACT_APP_URL_BACKEND;
 
 const token = {
   set(token) {
