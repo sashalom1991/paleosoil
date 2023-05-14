@@ -51,7 +51,7 @@ export default function Footer() {
           <ul>
             <li className="textItem"> 044-234-92-57</li>
             {avtor.map(info => (
-              <li className="textItem avtor">
+              <li className="textItem avtor" key={info.name}>
                 {info.name}
                 <span className="avtorIcon">
                   <a href={info.fb} className="link">

@@ -55,7 +55,7 @@ export default function Layout() {
       <header className="Header">
         <NavLink to="/" className="Logotype">
           <img src={Logo} alt="Logo" />
-          <span>Holocen Soil</span>
+          <span>Holocene Soil</span>
         </NavLink>
 
         <nav>

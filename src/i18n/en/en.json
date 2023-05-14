@@ -8,7 +8,8 @@
   "desc": {
     "title": "Paleopedology research of the nature of the Holocene within the territory of Ukraine",
     "text1": "The collected results for the database are obtained from published scientific materials and dissertation research. The formation of the database took place during the performance of scientific research work (0119U103209) \"Obtaining and spatial data binding of paleosoil researches of Holocene within the plains of Ukraine based on GIS-technologies\" and scientific research works (0121U111928) \"Development of a web-based GIS application for data management of the Holocene paleosoil research in the context of adaptation to climate change\" ",
-    "text2": "Current database can be viewed on the "
+    "text2": "Current database can be viewed on the ",
+    "title_sertificate": "The results of our work are officially registered and supported by a state certificate"
   },
   "descGuest": {
     "title": "Database expansion",
@@ -66,7 +67,8 @@
     "archDat": "Archaeological dating / dating:",
     "references": "References:",
     "pdf": "Pdf-file:",
-    "foto": "Foto"
+    "foto": "Foto",
+    "search": "Search..."
   },
   "soil": {
     "nameSoil": "Soil:",

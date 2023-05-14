@@ -2,6 +2,8 @@ import './Description.css';
 import { Link } from 'react-router-dom';
 import MapPaleoSoil_05 from '../../assets/img/description_map@0.5.webp';
 import MapPaleoSoil_025 from '../../assets/img/description_map@0.25.webp';
+import Certif_ukr from '../../assets/img/certificate_ukr.jpg';
+import Certif_eng from '../../assets/img/certificate_eng.jpg';
 import { useTranslation } from 'react-i18next';
 
 function Description() {
@@ -40,6 +42,21 @@ function Description() {
               Google-Form
             </a>
           </span>
+        </div>
+        <div className="DescCertif">
+          <h4 className="DescCertifTitle">{t('desc.title_sertificate')}</h4>
+          <div className="DescCertifCont">
+            <img
+              src={Certif_ukr}
+              alt="certificate ukraine"
+              className="DescCertifImg"
+            />
+            <img
+              src={Certif_eng}
+              alt="certificate english"
+              className="DescCertifImg"
+            />
+          </div>
         </div>
       </div>
     </>
